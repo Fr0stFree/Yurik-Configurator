@@ -95,12 +95,11 @@ class Configurator(GraphicalUserInterface):
             except ValueError as exc:
                 print(exc)
             finally:
-                progress = int((row - min_row) / (max_row - min_row) * 100)
+                try:
+                    progress = int((row - min_row) / (max_row - min_row) * 100)
+                except ZeroDivisionError:
+                    progress = 100
                 self.progress_bar.update_bar(progress)
-        self._stop_process()
-
-    # Внутренний метод для остановки обработки данных
-    def _stop_process(self):
         self.omx_file += '</omx>'
         print('Обработка завершена.')
         self.stop_process_btn.update(disabled=False)
