@@ -1,5 +1,6 @@
 from collections import namedtuple
 
+
 LOOKING_VALUE = 'FB_SHPS_S'
 
 SEVERITY_SIGNALS = {"Тушение": 1, "Пожар": 2, "Порог 2": 3, "Авария": 4, "Тревога": 5,

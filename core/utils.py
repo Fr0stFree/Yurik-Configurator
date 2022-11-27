@@ -21,10 +21,7 @@ def load_sheet(file_path: str) -> Worksheet | None:
 def is_acceptable(cell_c, cell_b) -> bool:
     """Функция проверки ячеек C и B на пригодность."""
     conditions = []
-    conditions.extend([
-        cell_c == LOOKING_VALUE,
-        bool(cell_b),
-    ])
+    conditions.extend([cell_c == LOOKING_VALUE, bool(cell_b)])
     return all(conditions)
 
 
@@ -63,7 +60,7 @@ def get_row_values(sheet: Worksheet, row: int) -> dict[str, str]:
 
 
 def is_valid(row: int, kwargs: dict[str, str]) -> bool:
-    """Функция проверки корректности данных."""
+    """Функция применяет валидаторы к данным, находящимся в строке."""
     try:
         [validators.empty_value(kwargs[field.key], location=row) for field in NON_EMPTY_FIELDS]
         validators.sound_on(kwargs[SOUND_ON.key], location=row)
@@ -74,26 +71,17 @@ def is_valid(row: int, kwargs: dict[str, str]) -> bool:
     return True
 
 
-def create_omx_file(sheet: Worksheet) -> str:
-    """Функция создания текстового файла с omx-объектами."""
-    result = ''
-    start = 2
-    end = sheet.max_row + 1
-    for row in range(start, end):
-        c_cell, b_cell = sheet[f"C{row}"].value, sheet[f"B{row}"].value
-        if not is_acceptable(c_cell, b_cell):
-            print(f'Строка {row} не удовлетворяет условиям. Пропускаем.')
-            continue
-        values = get_row_values(sheet, row)
-        if is_valid(row, values):
-            result += create_omx_obj(**values)
-        else:
-            result += '</omx>\n'
-            break
-        print(f'{row}/{end}')
-    return result
+def process_row(sheet: Worksheet, row: int) -> str:
+    """Функция обработки строки."""
+    c_cell, b_cell = sheet[f"C{row}"].value, sheet[f"B{row}"].value
+    if not is_acceptable(c_cell, b_cell):
+        raise ValueError(f'Строка {row} невалидна!')
+    values = get_row_values(sheet, row)
+    if is_valid(row, values):
+        return create_omx_obj(**values)
 
-def save_omx_file(file_path: str, omx_file: str) -> None:
-    """Функция сохранения текстового файла с omx-объектами."""
+
+def save_data(file_path: str, data: str) -> None:
+    """Функция сохранения текстового файла с omx-объектами по указанному пути в формате str."""
     with open(file_path, 'w') as f:
-        f.write(omx_file)
+        f.write(data)

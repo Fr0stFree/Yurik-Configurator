@@ -1,67 +1,41 @@
-from typing import Optional
-
-import PySimpleGUI as gui
-from openpyxl.worksheet.worksheet import Worksheet
+import PySimpleGUI as GUI
 
 from . import settings
-from .utils import save_omx_file, create_omx_file, load_sheet
 
-class Configurator:
-    gui.theme('LightGreen5')
-    gui.set_options(font='Franklin 10')
 
+class GraphicalUserInterface:
+    GUI.theme('LightGreen5')
+    GUI.set_options(font='Franklin 10')
 
     def __init__(self):
-        load_data_btn = gui.Button('Загрузить', key='-LOAD_DATA-', size=settings.BUTTON_SIZE)
-        save_data_btn = gui.Button('Сохранить', key='-SAVE_DATA-', size=settings.BUTTON_SIZE, disabled=True)
-        event_box = gui.Multiline(key='-OUTPUT-', disabled=True, size=settings.EVENT_BOX_SIZE,
-                                  reroute_stdout=True, autoscroll=True, no_scrollbar=True, expand_x=True)
-        menu = gui.Menu([
-            ['Configuration', ['Load::conf', 'Save::conf']],
-            ['Help', ['About']]
+        self.load_data_btn = GUI.Button('Загрузить', key='-LOAD_DATA-', size=settings.BUTTON_SIZE)
+        self.min_row_title = GUI.Text('Начальная строка')
+        self.min_row_input = GUI.InputText(key='-MIN_ROW-', size=settings.BUTTON_SIZE,
+                                           default_text=None, enable_events=True)
+        self.max_row_title = GUI.Text('Конечная строка')
+        self.max_row_input = GUI.InputText(key='-MAX_ROW-', size=settings.BUTTON_SIZE,
+                                           default_text=None, enable_events=True)
+        self.event_box = GUI.Multiline(key='-OUTPUT-', disabled=True, size=settings.EVENT_BOX_SIZE,
+                                       reroute_stdout=True, autoscroll=True, no_scrollbar=True,
+                                       expand_x=True, expand_y=True)
+        self.process_data_btn = GUI.Button(button_text='Обработать', key='-PROCESS_DATA-',
+                                           size=settings.BUTTON_SIZE, disabled=True)
+        self.stop_process_btn = GUI.Button(button_text='Стоп', key='-STOP_PROCESS-',
+                                           size=settings.BUTTON_SIZE, disabled=True)
+        self.save_data_btn = GUI.Button(button_text='Сохранить', key='-SAVE_DATA-',
+                                        size=settings.BUTTON_SIZE, disabled=True)
+        self.progress_bar = GUI.ProgressBar(max_value=100, key='-PROGRESS_BAR-',
+                                            size=settings.PROGRESS_BAR_SIZE, expand_x=True)
+
+        menu = GUI.Menu([
+            ['Разное', 'Об авторе'],
         ])
         layout = [
             [menu],
-            [load_data_btn],
-            [gui.HorizontalSeparator()],
-            [event_box],
-            [save_data_btn],
+            [self.load_data_btn, GUI.Push(), self.min_row_title, self.min_row_input, self.max_row_title, self.max_row_input],
+            [self.event_box],
+            [self.progress_bar],
+            [self.process_data_btn, self.stop_process_btn, GUI.Push(), self.save_data_btn],
         ]
-        self.window = gui.Window(
-            title=settings.WINDOW_TITLE,
-            layout=layout,
-            size=settings.WINDOW_SIZE,
-        )
-        self.sheet: Optional[Worksheet] = None
-        self.omx_file: Optional[str] = None
-
-    def run(self):
-        while True:
-            event, values = self.window.read()
-            if event == gui.WIN_CLOSED:
-                break
-            elif event == 'About':
-                gui.popup('About', settings.ABOUT_POPUP_TEXT)
-
-            elif event == '-LOAD_DATA-':
-                path = gui.popup_get_file('Load data', file_types=(('Excel files', '*.xlsx'),))
-                if path:
-                    self.sheet = load_sheet(file_path=path)
-                    if self.sheet:
-                        self.window['-SAVE_DATA-'].update(disabled=False)
-                        print(f'Таблица "{self.sheet.title}" успешно загружена.')
-                    else:
-                        print('Ошибка загрузки таблицы.')
-
-            elif event == '-SAVE_DATA-':
-                path = gui.popup_get_file('Save data', save_as=True, file_types=(('OMX files', '*.omx-export'),))
-                if path:
-                    if not path.endswith('.omx-export'):
-                        path += '.omx-export'
-                    omx_file = create_omx_file(self.sheet)
-                    save_omx_file(file_path=path, omx_file=omx_file)
-
-
-            elif event in (gui.WIN_CLOSED, '-CLOSE-'):
-                break
-        self.window.close()
+        self.window = GUI.Window(title=settings.WINDOW_TITLE, layout=layout,
+                                 size=settings.WINDOW_SIZE)
