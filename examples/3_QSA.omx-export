@@ -1,0 +1,93 @@
+﻿<omx xmlns="system" xmlns:ct="automation.control">
+  <ct:object name="GPA_QT_100" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="46da22ac-bc13-4fe6-aca2-d8047a136f9f">
+    <attribute type="Attributes.EUnit" value="%" />
+    <attribute type="Attributes.FracDigits" value="2" />
+    <attribute type="Attributes.Sensor_Position" value="QT100" />
+    <attribute type="Attributes.Sensor_Type" value="ТГА22M" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Газоанализатор QT100" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+    <attribute type="Attributes.Substance" value="Метан" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА3" />
+    <attribute type="Attributes.IFEX_TP" value="-" />
+    <attribute type="Attributes.IT1X_TP" value="-" />
+    <attribute type="Attributes.IT2X_TP" value="-" />
+  </ct:object>
+  <ct:object name="GPA_QT_101" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="6b7988f8-fa1a-41a6-86a0-ec80e1dca900">
+    <attribute type="Attributes.EUnit" value="%" />
+    <attribute type="Attributes.FracDigits" value="2" />
+    <attribute type="Attributes.Sensor_Position" value="QT100" />
+    <attribute type="Attributes.Sensor_Type" value="ТГА22M" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Газоанализатор QT101" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+    <attribute type="Attributes.Substance" value="Метан" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА3" />
+    <attribute type="Attributes.IFEX_TP" value="-" />
+    <attribute type="Attributes.IT1X_TP" value="-" />
+    <attribute type="Attributes.IT2X_TP" value="-" />
+  </ct:object>
+  <ct:object name="GPA_QT_200" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="d5761c3b-d297-4999-8a3a-39237506e75d">
+    <attribute type="Attributes.EUnit" value="%" />
+    <attribute type="Attributes.FracDigits" value="2" />
+    <attribute type="Attributes.Sensor_Position" value="QT100" />
+    <attribute type="Attributes.Sensor_Type" value="ТГА22M" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Газоанализатор QT200" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+    <attribute type="Attributes.Substance" value="Метан" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА3" />
+    <attribute type="Attributes.IFEX_TP" value="-" />
+    <attribute type="Attributes.IT1X_TP" value="-" />
+    <attribute type="Attributes.IT2X_TP" value="-" />
+  </ct:object>
+  <ct:object name="GPA_QT_201" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="a2c39077-99ae-41f9-96db-b5a2361175d8">
+    <attribute type="Attributes.EUnit" value="%" />
+    <attribute type="Attributes.FracDigits" value="2" />
+    <attribute type="Attributes.Sensor_Position" value="QT100" />
+    <attribute type="Attributes.Sensor_Type" value="ТГА22M" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Газоанализатор QT201" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+    <attribute type="Attributes.Substance" value="Метан" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА3" />
+    <attribute type="Attributes.IFEX_TP" value="-" />
+    <attribute type="Attributes.IT1X_TP" value="-" />
+    <attribute type="Attributes.IT2X_TP" value="-" />
+  </ct:object>
+  <ct:object name="GPA_QT_202" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="13fa0ec0-9a7d-4850-9279-95ce09a64709">
+    <attribute type="Attributes.EUnit" value="%" />
+    <attribute type="Attributes.FracDigits" value="2" />
+    <attribute type="Attributes.Sensor_Position" value="QT100" />
+    <attribute type="Attributes.Sensor_Type" value="ТГА22M" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Газоанализатор QT202" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+    <attribute type="Attributes.Substance" value="Метан" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА3" />
+    <attribute type="Attributes.IFEX_TP" value="-" />
+    <attribute type="Attributes.IT1X_TP" value="-" />
+    <attribute type="Attributes.IT2X_TP" value="-" />
+  </ct:object>
+  <ct:object name="GPA_QT_600" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="965d962e-3fc3-4ffe-9608-50d4ed472eda">
+    <attribute type="Attributes.EUnit" value="%" />
+    <attribute type="Attributes.FracDigits" value="2" />
+    <attribute type="Attributes.Sensor_Position" value="QT100" />
+    <attribute type="Attributes.Sensor_Type" value="ТГА22M" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Газоанализатор QT600" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+    <attribute type="Attributes.Substance" value="Метан" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА3" />
+    <attribute type="Attributes.IFEX_TP" value="-" />
+    <attribute type="Attributes.IT1X_TP" value="-" />
+    <attribute type="Attributes.IT2X_TP" value="-" />
+  </ct:object>
+  <ct:object name="GPA_QT_601" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="5a6da725-5efe-47ca-9756-f5434241018c">
+    <attribute type="Attributes.EUnit" value="%" />
+    <attribute type="Attributes.FracDigits" value="2" />
+    <attribute type="Attributes.Sensor_Position" value="QT100" />
+    <attribute type="Attributes.Sensor_Type" value="ТГА22M" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Газоанализатор QT601" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+    <attribute type="Attributes.Substance" value="Метан" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА3" />
+    <attribute type="Attributes.IFEX_TP" value="-" />
+    <attribute type="Attributes.IT1X_TP" value="-" />
+    <attribute type="Attributes.IT2X_TP" value="-" />
+  </ct:object>
+</omx>
