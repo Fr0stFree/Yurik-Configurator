@@ -21,18 +21,18 @@ def load_sheet(file_path: str) -> Worksheet | None:
 def is_acceptable(cell_c, cell_b) -> bool:
     """Функция проверки ячеек C и B на пригодность."""
     conditions = []
-    conditions.extend([cell_c == LOOKING_VALUE, bool(cell_b)])
+    conditions.extend([cell_c ==    LOOKING_VALUE, bool(cell_b)])
     return all(conditions)
 
 
-def create_omx_obj(name: str, stype: str, sound_on: str, message_on: str, severity: str,
+def create_omx_obj_for_SHPS(name: str, sensor_type: str, sound_on: str, message_on: str, severity: str,
                    color_on: str = '-', gp: str = '-', description: str = '-',
                    ivxx_tp: str = '-') -> str:
     """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
     _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
     omx_block = (
         f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
-        f'    <attribute type="Attributes.{STYPE.name}" value="{stype}" />\n'
+        f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
         f'    <attribute type="Attributes.{COLOR_ON.name}" value="{color_on}" />\n'
         f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
         f'    <attribute type="Attributes.{SOUND_ON.name}" value="{sound_on}" />\n'
@@ -45,16 +45,48 @@ def create_omx_obj(name: str, stype: str, sound_on: str, message_on: str, severi
     return omx_block
 
 
-def get_row_values(sheet: Worksheet, row: int) -> dict[str, str]:
+def create_omx_obj_for_SHOP(name: str, siren_type: str, sound_on: str, message_on: str, severity: str,
+                   color_on: str = '-', gp: str = '-', description: str = '-',
+                   ivxx_tp: str = '-') -> str:
+    """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
+    _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
+    omx_block = (
+        f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_SHOP_S.FB_SHOP_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
+        f'    <attribute type="Attributes.{SIREN_TYPE.name}" value="{siren_type}" />\n'
+        f'    <attribute type="Attributes.{COLOR_ON.name}" value="{color_on}" />\n'
+        f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
+        f'    <attribute type="Attributes.{SOUND_ON.name}" value="{sound_on}" />\n'
+        f'    <attribute type="unit.System.Attributes.{DESCRIPTION.name}" value="{description}" />\n'
+        f'    <attribute type="Attributes.{SEVERITY.name}" value="{severity}" />\n'
+        f'    <attribute type="Attributes.{IVXX_TP.name}" value="{ivxx_tp}" />\n'
+        f'  </ct:object>\n'
+    )
+    return omx_block
+
+def get_row_values_SHPS(sheet: Worksheet, row: int) -> dict[str, str]:
     """Функция получения значений ячеек из строки."""
     kwargs = dict(name=sheet[f"{NAME.column}{row}"].value,
-                  stype=sheet[f"{STYPE.column}{row}"].value,
+                  sensor_type=sheet[f"{SENSOR_TYPE.column}{row}"].value,
                   color_on=sheet[f"{COLOR_ON.column}{row}"].value,
                   gp=sheet[f"{GP.column}{row}"].value,
                   sound_on=sheet[f"{SOUND_ON.column}{row}"].value,
                   severity=sheet[f"{SEVERITY.column}{row}"].value,
                   message_on=sheet[f"{MESSAGE_ON.column}{row}"].value,
                   description=sheet[f"{DESCRIPTION.column}{row}"].value,
+                  ivxx_tp=sheet[f"{IVXX_TP.column}{row}"].value)
+    return kwargs
+
+
+def get_row_values_SHOP(sheet: Worksheet, row: int) -> dict[str, str]:
+    """Функция получения значений ячеек из строки."""
+    kwargs = dict(name=sheet[f"{NAME.column}{row}"].value,
+                  siren_type=sheet[f"{SIREN_TYPE.column}{row}"].value,
+                  color_on=sheet[f"{COLOR_ON.column}{row}"].value,
+                  gp=sheet[f"{GP.column}{row}"].value,
+                  sound_on=sheet[f"{SOUND_ON.column}{row}"].value,
+                  description=sheet[f"{DESCRIPTION.column}{row}"].value,
+                  # message_on=sheet[f"{MESSAGE_ON.column}{row}"].value,
+                  severity=sheet[f"{SEVERITY.column}{row}"].value,
                   ivxx_tp=sheet[f"{IVXX_TP.column}{row}"].value)
     return kwargs
 

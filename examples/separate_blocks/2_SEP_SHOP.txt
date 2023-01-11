@@ -1,0 +1,10 @@
+  </ct:object>
+  <ct:object name="GPA_HA_103" base-type="Types.FB_SHOP_S.FB_SHOP_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="18b18309-a83a-4fbe-b062-60a0728797b0">
+    <attribute type="Attributes.SirenType" value="Звук" />
+    <attribute type="Attributes.ColorOn" value="-" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА31" />
+    <attribute type="Attributes.SoundOn" value="Телесигнализация" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Сирена HA100,103" />
+    <attribute type="Attributes.SeverityOn" value="18" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+  </ct:object>

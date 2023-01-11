@@ -1,0 +1,5 @@
+  <ct:object name="GPA_UPG_OD" base-type="Types.FB_UPG_S.FB_UPG_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="fc710f5c-c7f7-4c30-9c67-fe1b8b91aac0">
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Пожаротушение в ОД" />
+    <attribute type="Attributes.SecondQueue" value="1" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА3" />
+  </ct:object>
