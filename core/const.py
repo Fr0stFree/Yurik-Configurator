@@ -86,4 +86,22 @@ IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
 
 
+class FB_DO_S:
+
+SEVERITY_SIGNALS = {"Тушение": 1, "Пожар": 2, "Порог 2": 3, "Авария": 4, "Тревога": 5,
+                    "Порог 1": 6, "Предупреждение": 8, "Недостоверность": 10,
+                    "Неисправность": 12, "Отключение": 13, "Ремонт": 14, "Имитация": 16,
+                    "Телесигнализация": 18, "Команда оператора": 20, "Информация": 22}
+
+Field = namedtuple('Field', 'name, column, key')
+
+NAME = Field(name='name', column='D', key='name')
+GP = Field(name='GeneralPlan', column='J', key='gp')
+COLOR_ON = Field(name='ColorOn', column='????', key='color_on')
+SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
+DESCRIPTION = Field(name='Description', column='E', key='description')
+SEVERITY = Field(name='SeverityOn', column='P', key='severity')
+OXON_TP = Field(name='OXON_TP', column='', key='oxon_tp')
+
+NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
 

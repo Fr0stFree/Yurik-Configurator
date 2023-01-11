@@ -96,12 +96,12 @@ def create_omx_obj_for_QSA(name: str,
 
 
 def create_omx_obj_for_DI(name: str, sensor_type: str, sound_on: str, message_on: str, severity: str,
-                   color_on: str = '-', gp: str = '-', color_off: str, description: str = '-',
+                   color_on: str = '-', gp: str = '-', description: str = '-',
                    ivxx_tp: str = '-') -> str:
     """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
     _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
     omx_block = (
-        f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
+        f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_DI_S.FB_DI_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
         f'    <attribute type="Attributes.{COLOR_OFF.name}" value="{color_off}" />\n'
         f'    <attribute type="Attributes.{COLOR_ON.name}" value="{color_on}" />\n'
         f'    <attribute type="Attributes.{MESSAGE_ON.name}" value="{message_on}" />\n'
@@ -111,6 +111,24 @@ def create_omx_obj_for_DI(name: str, sensor_type: str, sound_on: str, message_on
         f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
         f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
         f'    <attribute type="Attributes.{IVXX_TP.name}" value="{ivxx_tp}" />\n'
+        f'  </ct:object>\n'
+    )
+    return
+
+
+def create_omx_obj_for_DO(name: str, sensor_type: str, sound_on: str, message_on: str, severity: str,
+                   color_on: str = '-', gp: str = '-', description: str = '-',
+                   ivxx_tp: str = '-') -> str:
+    """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
+    _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
+    omx_block = (
+        f'  <ct:object {NAME.name}="{name}" Types.FB_DO_STB_S.FB_DO_STB_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
+        f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
+        f'    <attribute type="Attributes.{COLOR_ON.name}" value="{color_on}" />\n'
+        f'    <attribute type="Attributes.{SOUND_ON.name}" value="{sound_on}" />\n'
+        f'    <attribute type="Attributes.{DESCRIPTION.name}" value="{description}" />\n'
+        f'    <attribute type="Attributes.{SEVERITY.name}" value="{severity}" />\n'
+        f'    <attribute type="Attributes.{OXON_TP.name}" value="{oxon_tp}" />\n'
         f'  </ct:object>\n'
     )
     return omx_block
@@ -172,6 +190,18 @@ def get_row_values_for_DI(sheet: Worksheet, row: int) -> dict[str, str]:
                   gp=sheet[f"{IVXX_TP.column}{row}"].value,
                   sensor_type=sheet[f"{SENSOR_TYPE.column}{row}"].value,
                   ivxx_tp = sheet[f"{IVXX_TP.column}{row}"].value)
+    return kwargs
+
+
+def get_row_values_for_DO(sheet: Worksheet, row: int) -> dict[str, str]:
+    """Функция получения значений ячеек из строки."""
+    kwargs = dict(name=sheet[f"{NAME.column}{row}"].value,
+                  gp=sheet[f"{GP.column}{row}"].value,
+                  color_on=sheet[f"{COLOR_ON.column}{row}"].value,
+                  sound_on=sheet[f"{SOUND_ON.column}{row}"].value,
+                  description=sheet[f"{DESCRIPTION.column}{row}"].value,
+                  severity=sheet[f"{SEVERITY.column}{row}"].value,
+                  oxon_tp = sheet[f"{OXON_TP.column}{row}"].value)
     return kwargs
 
 
