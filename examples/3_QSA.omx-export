@@ -14,7 +14,7 @@
   </ct:object>
   <ct:object name="GPA_QT_101" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="6b7988f8-fa1a-41a6-86a0-ec80e1dca900">
     <attribute type="Attributes.EUnit" value="%" />
-    <attribute type="Attributes.FracDigits" value="2" />
+        <attribute type="Attributes.FracDigits" value="2" />
     <attribute type="Attributes.Sensor_Position" value="QT100" />
     <attribute type="Attributes.Sensor_Type" value="ТГА22M" />
     <attribute type="unit.System.Attributes.Description" value="ГПА-31. Газоанализатор QT101" />

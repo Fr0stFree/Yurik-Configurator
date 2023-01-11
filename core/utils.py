@@ -45,7 +45,7 @@ def create_omx_obj_for_SHPS(name: str, sensor_type: str, sound_on: str, message_
     return omx_block
 
 
-def create_omx_obj_for_SHOP(name: str, siren_type: str, sound_on: str, message_on: str, severity: str,
+def create_omx_obj_for_SHOP(name: str, siren_type: str, sound_on: str, severity: str,
                    color_on: str = '-', gp: str = '-', description: str = '-',
                    ivxx_tp: str = '-') -> str:
     """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
@@ -63,7 +63,38 @@ def create_omx_obj_for_SHOP(name: str, siren_type: str, sound_on: str, message_o
     )
     return omx_block
 
-def get_row_values_SHPS(sheet: Worksheet, row: int) -> dict[str, str]:
+def create_omx_obj_for_QSA(name: str,
+                           e_unit: str,
+                           frac_digits: str,
+                           sensor_position: str,
+                           sensor_type: str,
+                           description: str,
+                           substance: str,
+                           gp: str,
+                           ifex_tp: str,
+                           it1x_tp: str,
+                           it2x_tp: str,
+                           ivxx_tp: str = '-') -> str:
+    """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
+    _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
+    omx_block = (
+        f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
+        f'    <attribute type="Attributes.{E_UNIT.name}" value="{e_unit}" />\n'
+        f'    <attribute type="Attributes.{FRAC_DIGITS.name}" value="{frac_digits}" />\n'
+        f'    <attribute type="Attributes.{SENSOR_POSITION.name}" value="{sensor_position}" />\n'
+        f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
+        f'    <attribute type="Attributes.{DESCRIPTION.name}" value="{description}" />\n'
+        f'    <attribute type="Attributes.{IVXX_TP.name}" value="{ivxx_tp}" />\n'
+        f'    <attribute type="Attributes.{SUBSTANCE.name}" value="{substance}" />\n'
+        f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
+        f'    <attribute type="Attributes.{IFEX_TP.name}" value="{ifex_tp}" />\n'
+        f'    <attribute type="Attributes.{IT1X_TP.name}" value="{it1x_tp}" />\n'
+        f'    <attribute type="Attributes.{IT2X_TP.name}" value="{it2x_tp}" />\n'
+        f'  </ct:object>\n'
+    )
+    return omx_block
+
+def get_row_values_for_SHPS(sheet: Worksheet, row: int) -> dict[str, str]:
     """Функция получения значений ячеек из строки."""
     kwargs = dict(name=sheet[f"{NAME.column}{row}"].value,
                   sensor_type=sheet[f"{SENSOR_TYPE.column}{row}"].value,
@@ -77,7 +108,7 @@ def get_row_values_SHPS(sheet: Worksheet, row: int) -> dict[str, str]:
     return kwargs
 
 
-def get_row_values_SHOP(sheet: Worksheet, row: int) -> dict[str, str]:
+def get_row_values_for_SHOP(sheet: Worksheet, row: int) -> dict[str, str]:
     """Функция получения значений ячеек из строки."""
     kwargs = dict(name=sheet[f"{NAME.column}{row}"].value,
                   siren_type=sheet[f"{SIREN_TYPE.column}{row}"].value,
@@ -85,9 +116,25 @@ def get_row_values_SHOP(sheet: Worksheet, row: int) -> dict[str, str]:
                   gp=sheet[f"{GP.column}{row}"].value,
                   sound_on=sheet[f"{SOUND_ON.column}{row}"].value,
                   description=sheet[f"{DESCRIPTION.column}{row}"].value,
-                  # message_on=sheet[f"{MESSAGE_ON.column}{row}"].value,
                   severity=sheet[f"{SEVERITY.column}{row}"].value,
                   ivxx_tp=sheet[f"{IVXX_TP.column}{row}"].value)
+    return kwargs
+
+
+def get_row_values_for_QSA(sheet: Worksheet, row: int) -> dict[str, str]:
+    """Функция получения значений ячеек из строки."""
+    kwargs = dict(name=sheet[f"{NAME.column}{row}"].value,
+                  e_unit=sheet[f"{E_UNIT.column}{row}"].value,
+                  frac_digits=sheet[f"{FRAC_DIGITS.column}{row}"].value,
+                  sensor_position=sheet[f"{SENSOR_POSITION.column}{row}"].value,
+                  sensor_type=sheet[f"{SENSOR_TYPE.column}{row}"].value,
+                  description=sheet[f"{DESCRIPTION.column}{row}"].value,
+                  ivxx_tp=sheet[f"{IVXX_TP.column}{row}"].value,
+                  substance=sheet[f"{SUBSTANCE.column}{row}"].value),
+                  gp = sheet[f"{GP.column}{row}"].value),
+                  ifex_tp = sheet[f"{IFEX_TP.column}{row}"].value),
+                  it1x_tp = sheet[f"{IT1X_TP.column}{row}"].value),
+                  it2x_tp = sheet[f"{IT2X_TP.column}{row}"].value),
     return kwargs
 
 

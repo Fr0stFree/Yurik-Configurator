@@ -20,7 +20,7 @@ DESCRIPTION = Field(name='Description', column='E', key='description')
 SEVERITY = Field(name='SeverityOn', column='P', key='severity')
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 
-NON_EMPTY_FIELDS = [NAME, STYPE, GP, SEVERITY]
+NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
 
 class FB_SHOP_S:
 
@@ -40,6 +40,26 @@ SEVERITY_SIGNALS = {"Тушение": 1, "Пожар": 2, "Порог 2": 3, "А
     SEVERITY = Field(name='SeverityOn', column='P', key='severity')
     IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 
-NON_EMPTY_FIELDS = [NAME, STYPE, GP, SEVERITY]
+NON_EMPTY_FIELDS = [NAME, SIREN_TYPE, GP, SEVERITY]
+
+
+class FB_QSA_S:
+
+    Field = namedtuple('Field', 'name, column, key')
+
+    NAME = Field(name='name', column='D', key='name')
+    E_UNIT = Field(name='EUnit', column='L', key='e_unit')
+    FRAC_DIGITS = Field(name='FracDigits', column='????', key='frac_digits')
+    SENSOR_POSITION = Field(name='SensorPosition', column='????', key='sensor_position')
+    SENSOR_TYPE = Field(name='SensorType', column='O', key='sensor_type')
+    DESCRIPTION = Field(name='Description', column='E', key='description')
+    IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
+    SUBSTANCE = Field(name='Substance', column='N', key='substance')
+    GP = Field(name='GeneralPlan', column='J', key='gp')
+    IFEX_TP = Field(name='IfexTp', column='????(-)', key='ifex_tp')
+    IT1X_TP = Field(name='It1xTp', column='????(-)', key='it1x_tp')
+    IT2X_TP = Field(name='It2xTp', column='????(-)', key='it2x_tp')
+
+NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
 
 
