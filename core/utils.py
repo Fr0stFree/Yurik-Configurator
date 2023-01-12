@@ -33,8 +33,7 @@ def create_omx_obj_for_SHPS(name: str, sensor_type: str, sound_on: str, message_
     omx_block = (
         f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
         f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
-        f'    <attribute type="Attributes.{COLOR_OFF.name}" value="{color_off}" />\n'
-
+        f'    <attribute type="Attributes.ColorOff" value="серый" />\n'
         f'    <attribute type="Attributes.{COLOR_ON.name}" value="{color_on}" />\n'
         f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
         f'    <attribute type="Attributes.{SOUND_ON.name}" value="{sound_on}" />\n'
@@ -67,7 +66,6 @@ def create_omx_obj_for_SHOP(name: str, siren_type: str, sound_on: str, severity:
 
 def create_omx_obj_for_QSA(name: str,
                            e_unit: str,
-                           frac_digits: str,
                            sensor_position: str,
                            sensor_type: str,
                            description: str,
@@ -82,7 +80,7 @@ def create_omx_obj_for_QSA(name: str,
     omx_block = (
         f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
         f'    <attribute type="Attributes.{E_UNIT.name}" value="{e_unit}" />\n'
-        f'    <attribute type="Attributes.{FRAC_DIGITS.name}" value="{frac_digits}" />\n'
+        f'    <attribute type="Attributes.FracDigits" value="2" />
         f'    <attribute type="Attributes.{SENSOR_POSITION.name}" value="{sensor_position}" />\n'
         f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
         f'    <attribute type="Attributes.{DESCRIPTION.name}" value="{description}" />\n'
@@ -95,7 +93,7 @@ def create_omx_obj_for_QSA(name: str,
         f'  </ct:object>\n'
     )
     return omx_block
-
+f'
 
 def create_omx_obj_for_DI(name: str, sensor_type: str, sound_on: str, message_on: str, severity: str,
                    color_on: str = '-', gp: str = '-', description: str = '-',
@@ -104,7 +102,7 @@ def create_omx_obj_for_DI(name: str, sensor_type: str, sound_on: str, message_on
     _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
     omx_block = (
         f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_DI_S.FB_DI_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
-        f'    <attribute type="Attributes.{COLOR_OFF.name}" value="{color_off}" />\n'
+        f'    <attribute type="Attributes.ColorOff" value="серый" />\n'
         f'    <attribute type="Attributes.{COLOR_ON.name}" value="{color_on}" />\n'
         f'    <attribute type="Attributes.{MESSAGE_ON.name}" value="{message_on}" />\n'
         f'    <attribute type="Attributes.{SEVERITY.name}" value="{severity}" />\n'
@@ -138,7 +136,6 @@ def create_omx_obj_for_DO(name: str, sensor_type: str, sound_on: str, message_on
 
 def create_omx_obj_for_AI(name: str,
                            e_unit: str,
-                           frac_digits: str,
                            sensor_position: str,
                            sensor_type: str,
                            description: str,
@@ -153,7 +150,7 @@ def create_omx_obj_for_AI(name: str,
     omx_block = (
         f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_AI_S.FB_AI_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
         f'    <attribute type="Attributes.{E_UNIT.name}" value="{e_unit}" />\n'
-        f'    <attribute type="Attributes.{FRAC_DIGITS.name}" value="{frac_digits}" />\n'
+        f'    <attribute type="Attributes.FracDigits" value="2" />
         f'    <attribute type="Attributes.{SENSOR_POSITION.name}" value="{sensor_position}" />\n'
         f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
         f'    <attribute type="Attributes.{DESCRIPTION.name}" value="{description}" />\n'

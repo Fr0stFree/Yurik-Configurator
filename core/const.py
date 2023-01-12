@@ -12,7 +12,8 @@ Field = namedtuple('Field', 'name, column, key')
 
 NAME = Field(name='name', column='D', key='name')
 SENSOR_TYPE = Field(name='SensorType', column='N', key='sensor_type')
-COLOR_OFF = Field(name='ColorOff', column='Q', key='color_off')
+#COLOR_OFF = Field(name='ColorOff', column='???', key='color_off')
+#COLOR_OFF-отсутствует в таблице, по умолчанию "серый" поставил
 COLOR_ON = Field(name='ColorOn', column='Q', key='color_on')
 GP = Field(name='GeneralPlan', column='J', key='gp')
 SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
@@ -50,16 +51,17 @@ Field = namedtuple('Field', 'name, column, key')
 
 NAME = Field(name='name', column='D', key='name')
 E_UNIT = Field(name='EUnit', column='L', key='e_unit')
-FRAC_DIGITS = Field(name='FracDigits', column='???', key='frac_digits')
-SENSOR_POSITION = Field(name='Sensor_Position', column='????', key='sensor_position')
+#FRAC_DIGITS = Field(name='FracDigits', column='???', key='frac_digits')
+#FRAC_DIGITS - задает сколько цифр будет после запятой у аналоговых  датчиков, пока по умолчанию ставлю 2
+SENSOR_POSITION = Field(name='Sensor_Position', column='N', key='sensor_position')
 SENSOR_TYPE = Field(name='Sensor_Type', column='O', key='sensor_type')
 DESCRIPTION = Field(name='Description', column='E', key='description')
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 SUBSTANCE = Field(name='Substance', column='N', key='substance')
 GP = Field(name='GeneralPlan', column='J', key='gp')
-IFEX_TP = Field(name='IFEX_TP', column='????(-)', key='ifex_tp')
-IT1X_TP = Field(name='IT1X_TP', column='????(-)', key='it1x_tp')
-IT2X_TP = Field(name='IT2X_TP', column='????(-)', key='it2x_tp')
+IFEX_TP = Field(name='IFEX_TP', column='AD', key='ifex_tp')
+IT1X_TP = Field(name='IT1X_TP', column='Z', key='it1x_tp')
+IT2X_TP = Field(name='IT2X_TP', column='AA', key='it2x_tp')
 
 NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP]
 
@@ -74,8 +76,9 @@ SEVERITY_SIGNALS = {"Тушение": 1, "Пожар": 2, "Порог 2": 3, "А
 Field = namedtuple('Field', 'name, column, key')
 
 NAME = Field(name='name', column='D', key='name')
-COLOR_OFF = Field(name='ColorOff', column='????', key='color_off')
-COLOR_ON = Field(name='ColorOn', column='????', key='color_on')
+#COLOR_OFF = Field(name='ColorOff', column='???', key='color_off')
+#COLOR_OFF-отсутствует в таблице, по умолчанию "серый" поставил
+COLOR_ON = Field(name='ColorOn', column='Q', key='color_on')
 MESSAGE_ON = Field(name='MessageOn', column='O', key='message_on')
 SEVERITY = Field(name='SeverityOn', column='P', key='severity')
 SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
@@ -98,11 +101,11 @@ Field = namedtuple('Field', 'name, column, key')
 
 NAME = Field(name='name', column='D', key='name')
 GP = Field(name='GeneralPlan', column='J', key='gp')
-COLOR_ON = Field(name='ColorOn', column='????', key='color_on')
+COLOR_ON = Field(name='ColorOn', column='Q', key='color_on')
 SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
 DESCRIPTION = Field(name='Description', column='E', key='description')
 SEVERITY = Field(name='SeverityOn', column='P', key='severity')
-OXON_TP = Field(name='OXON_TP', column='', key='oxon_tp')
+OXON_TP = Field(name='OXON_TP', column='AE', key='oxon_tp')
 
 NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
 
@@ -113,9 +116,9 @@ Field = namedtuple('Field', 'name, column, key')
 
 NAME = Field(name='name', column='D', key='name')
 E_UNIT = Field(name='EUnit', column='L', key='e_unit')
-FRAC_DIGITS = Field(name='FracDigits', column='????', key='frac_digits')
-PAR_NAME = Field(name='ParName', column='????', key='par_name')
-SENSOR_POSITION = Field(name='Sensor_Position', column='????', key='sensor_position')
+#FRAC_DIGITS = Field(name='FracDigits', column='????', key='frac_digits')
+PAR_NAME = Field(name='ParName', column='K', key='par_name')
+SENSOR_POSITION = Field(name='Sensor_Position', column='N', key='sensor_position')
 SENSOR_TYPE = Field(name='Sensor_Type', column='O', key='sensor_type')
 DESCRIPTION = Field(name='Description', column='E', key='description')
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
