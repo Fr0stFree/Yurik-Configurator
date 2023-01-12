@@ -42,14 +42,14 @@ SEVERITY_SIGNALS = {"Тушение": 1, "Пожар": 2, "Порог 2": 3, "А
 
 NON_EMPTY_FIELDS = [NAME, SIREN_TYPE, GP]
 
-
+вавыа
 class FB_QSA_S:
 
     Field = namedtuple('Field', 'name, column, key')
 
     NAME = Field(name='name', column='D', key='name')
     E_UNIT = Field(name='EUnit', column='L', key='e_unit')
-    FRAC_DIGITS = Field(name='FracDigits', column='????', key='frac_digits')
+    FRAC_DIGITS = Field(name='FracDigits', column='???', key='frac_digits')
     SENSOR_POSITION = Field(name='SensorPosition', column='????', key='sensor_position')
     SENSOR_TYPE = Field(name='SensorType', column='O', key='sensor_type')
     DESCRIPTION = Field(name='Description', column='E', key='description')
@@ -104,4 +104,20 @@ SEVERITY = Field(name='SeverityOn', column='P', key='severity')
 OXON_TP = Field(name='OXON_TP', column='', key='oxon_tp')
 
 NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
+
+
+class FB_AI_S:
+
+    Field = namedtuple('Field', 'name, column, key')
+
+    E_UNIT = Field(name='EUnit', column='L', key='e_unit')
+    FRAC_DIGITS = Field(name='FracDigits', column='????', key='frac_digits')
+    PAR_NAME = Field(name='ParName', column='????', key='par_name')
+    SENSOR_POSITION = Field(name='SensorPosition', column='????', key='sensor_position')
+    SENSOR_TYPE = Field(name='SensorType', column='O', key='sensor_type')
+    DESCRIPTION = Field(name='Description', column='E', key='description')
+    IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
+    GP = Field(name='GeneralPlan', column='J', key='gp')
+
+NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP]
 
