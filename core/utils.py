@@ -33,7 +33,7 @@ def create_omx_obj_for_SHPS(name: str, sensor_type: str, sound_on: str, message_
     omx_block = (
         f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
         f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
-        f'    <attribute type="Attributes.ColorOff" value="серый" />\n'
+        f'    <attribute type="Attributes.ColorOff" value="Серый" />\n'
         f'    <attribute type="Attributes.{COLOR_ON.name}" value="{color_on}" />\n'
         f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
         f'    <attribute type="Attributes.{SOUND_ON.name}" value="{sound_on}" />\n'

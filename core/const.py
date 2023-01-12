@@ -2,7 +2,7 @@ from collections import namedtuple
 
 
 class FB_SHPS_S:
-
+#SOUND_ON должен смотреть и вставлять в Severity
 SEVERITY_SIGNALS = {"Тушение": 1, "Пожар": 2, "Порог 2": 3, "Авария": 4, "Тревога": 5,
                     "Порог 1": 6, "Предупреждение": 8, "Недостоверность": 10,
                     "Неисправность": 12, "Отключение": 13, "Ремонт": 14, "Имитация": 16,
@@ -19,10 +19,10 @@ GP = Field(name='GeneralPlan', column='J', key='gp')
 SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
 MESSAGE_ON = Field(name='MessageOn', column='O', key='message_on')
 DESCRIPTION = Field(name='Description', column='E', key='description')
-SEVERITY = Field(name='SeverityOn', column='P', key='severity')
+SEVERITY = Field(name='SeverityOn', column='???', key='severity') # неверный столбец
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 
-NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
+NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SOUND_ON, MESSAGE_ON, DESCRIPTION]
 
 class FB_SHOP_S:
 
@@ -37,12 +37,12 @@ NAME = Field(name='name', column='D', key='name')
 SIREN_TYPE = Field(name='SirenType', column='N', key='siren_type')
 COLOR_ON = Field(name='ColorOn', column='Q', key='color_on')
 GP = Field(name='GeneralPlan', column='J', key='gp')
-SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
+SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')# под вопросом нужно или нет
 DESCRIPTION = Field(name='Description', column='E', key='description')
-SEVERITY = Field(name='SeverityOn', column='P', key='severity')
+SEVERITY = Field(name='SeverityOn', column='???', key='severity')
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 
-NON_EMPTY_FIELDS = [NAME, SIREN_TYPE, GP]
+NON_EMPTY_FIELDS = [NAME, SIREN_TYPE, GP, SOUND_ON, DESCRIPTION]
 
 
 class FB_QSA_S:
@@ -63,7 +63,7 @@ IFEX_TP = Field(name='IFEX_TP', column='AD', key='ifex_tp')
 IT1X_TP = Field(name='IT1X_TP', column='Z', key='it1x_tp')
 IT2X_TP = Field(name='IT2X_TP', column='AA', key='it2x_tp')
 
-NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP]
+NON_EMPTY_FIELDS = [NAME, GP, SUBSTANCE, E_UNIT, DESCRIPTION]
 
 
 class FB_DI_S:
@@ -80,18 +80,18 @@ NAME = Field(name='name', column='D', key='name')
 #COLOR_OFF-отсутствует в таблице, по умолчанию "серый" поставил
 COLOR_ON = Field(name='ColorOn', column='Q', key='color_on')
 MESSAGE_ON = Field(name='MessageOn', column='O', key='message_on')
-SEVERITY = Field(name='SeverityOn', column='P', key='severity')
+SEVERITY = Field(name='SeverityOn', column='P', key='severity_on')# SEVERITY формируется из SOUND_ON
 SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
 DESCRIPTION = Field(name='Description', column='E', key='description')
 GP = Field(name='GeneralPlan', column='J', key='gp')
 SENSOR_TYPE = Field(name='Sensor_Type', column='N', key='sensor_type')
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 
-NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
+NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SOUND_ON, MESSAGE_ON, DESCRIPTION]
 
 
-class FB_DO_S:
-
+class FB_DO_STB_S:
+#SEVERITY_SIGNALS сделать глобальной
 SEVERITY_SIGNALS = {"Тушение": 1, "Пожар": 2, "Порог 2": 3, "Авария": 4, "Тревога": 5,
                     "Порог 1": 6, "Предупреждение": 8, "Недостоверность": 10,
                     "Неисправность": 12, "Отключение": 13, "Ремонт": 14, "Имитация": 16,
@@ -102,12 +102,12 @@ Field = namedtuple('Field', 'name, column, key')
 NAME = Field(name='name', column='D', key='name')
 GP = Field(name='GeneralPlan', column='J', key='gp')
 COLOR_ON = Field(name='ColorOn', column='Q', key='color_on')
-SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
+SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')# под впоросом, нужен ли он. Узнать!
 DESCRIPTION = Field(name='Description', column='E', key='description')
-SEVERITY = Field(name='SeverityOn', column='P', key='severity')
+SEVERITY = Field(name='SeverityOn', column='???', key='severity')#вычисляется значение из SOUND_ON
 OXON_TP = Field(name='OXON_TP', column='AE', key='oxon_tp')
 
-NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SEVERITY]
+NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SOUND_ON, DESCRIPTION]
 
 
 class FB_AI_S:
@@ -124,7 +124,7 @@ DESCRIPTION = Field(name='Description', column='E', key='description')
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 GP = Field(name='GeneralPlan', column='J', key='gp')
 
-NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP]
+NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, PAR_NAME, E_UNIT, DESCRIPTION]
 
 
 class FB_UPG_S:
@@ -133,8 +133,19 @@ Field = namedtuple('Field', 'name, column, key')
 
 NAME = Field(name='name', column='D', key='name')
 DESCRIPTION = Field(name='Description', column='E', key='description')
-SECOND_QUEUE = Field(name='SecondQueue', column='E', key='second_queue')
+SECOND_QUEUE = Field(name='SecondQueue', column='N', key='second_queue')
 GP = Field(name='GeneralPlan', column='J', key='gp')
 
-NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP]
+NON_EMPTY_FIELDS = [NAME, GP, DESCRIPTION, SECOND_QUEUE]
+
+
+class FB_UPP_S:
+# пенное тушение
+Field = namedtuple('Field', 'name, column, key')
+
+NAME = Field(name='name', column='D', key='name')
+DESCRIPTION = Field(name='Description', column='E', key='description')
+GP = Field(name='GeneralPlan', column='J', key='gp')
+
+NON_EMPTY_FIELDS = [NAME, GP, DESCRIPTION]
 
