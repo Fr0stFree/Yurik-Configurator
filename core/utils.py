@@ -33,6 +33,8 @@ def create_omx_obj_for_SHPS(name: str, sensor_type: str, sound_on: str, message_
     omx_block = (
         f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
         f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
+        f'    <attribute type="Attributes.{COLOR_OFF.name}" value="{color_off}" />\n'
+
         f'    <attribute type="Attributes.{COLOR_ON.name}" value="{color_on}" />\n'
         f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
         f'    <attribute type="Attributes.{SOUND_ON.name}" value="{sound_on}" />\n'
@@ -165,6 +167,25 @@ def create_omx_obj_for_AI(name: str,
     )
     return omx_block
 
+
+def create_omx_obj_for_UPG(name: str,
+                           description: str,
+                           second_queue: str,
+                           e_unit: str,
+                           gp: str,
+                           ) -> str:
+    """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
+    _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
+    omx_block = (
+        f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_UPG_S.FB_UPG_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
+        f'    <attribute type="unit.System.Attributes.{DESCRIPTION.name}" value="{description}" />\n'
+        f'    <attribute type="Attributes.{SECOND_QUEUE.name}" value="{second_queue}" />\n'
+        f'    <attribute type="Attributes.{E_UNIT.name}" value="{e_unit}" />\n'
+        f'    <attribute type="Attributes.{GP.name}" value="{gp}" />\n'
+        f'  </ct:object>\n'
+    )
+    return omx_block
+
 def get_row_values_for_SHPS(sheet: Worksheet, row: int) -> dict[str, str]:
     """Функция получения значений ячеек из строки."""
     kwargs = dict(name=sheet[f"{NAME.column}{row}"].value,
@@ -246,6 +267,16 @@ def get_row_values_for_AI(sheet: Worksheet, row: int) -> dict[str, str]:
                   sensor_type=sheet[f"{SENSOR_TYPE.column}{row}"].value,
                   description=sheet[f"{DESCRIPTION.column}{row}"].value,
                   ivxx_tp=sheet[f"{IVXX_TP.column}{row}"].value,
+                  gp=sheet[f"{GP.column}{row}"].value)
+
+    return kwargs
+
+
+def get_row_values_for_UPG(sheet: Worksheet, row: int) -> dict[str, str]:
+    """Функция получения значений ячеек из строки."""
+    kwargs = dict(name=sheet[f"{NAME.column}{row}"].value,
+                  description=sheet[f"{DESCRIPTION.column}{row}"].value,
+                  second_queue=sheet[f"{SECOND_QUEUE.column}{row}"].value,
                   gp=sheet[f"{GP.column}{row}"].value)
 
     return kwargs
