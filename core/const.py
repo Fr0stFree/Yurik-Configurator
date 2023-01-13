@@ -1,5 +1,27 @@
 from collections import namedtuple
 
+# | Переменная      | Атрибут                       | Пример                       | Комментарий               |
+# | --------------- | ----------------------------- | ---------------------------- | ----------------------- |
+# | NAME            | Имя датчика                   | GPA_QT_100                   |                         |
+# | SIREN_TYPE      | Тип оповещателя               | Свет                         |                         |
+# | COLOR_ON        | Цвет при сработке             | Красный                      |                         |
+# | GP              | Мнемосхема                    | ГПА31                        |                         |
+# | SOUND_ON        | Звук при сработке             | Пожар                        |                         |
+# | DESCRIPTION     | Описание                      | ГПА-31. Газоанализатор QT202 |                         |
+# | SEVERITY        | Важность при сработке         | 2                            | Формируется из SOUND_ON |
+# | IVXX_TP         | ==Входн знач== Адр. подкл.    | 2+7                          |                         |
+# | E_UNIT          | Единицы измерения             | %                            |                         |
+# | SENSOR_POSITION | Позиция датчика               | QT100                        |                         |
+# | SENSOR_TYPE     | Тип датчика                   | КТД-50                       |2 SHPS AI проверить                     |
+# | SUBSTANCE       | Тип вещества                  | Метан                        |                         |
+# | IFEX_TP         | Неисправность   пер.          | 3+1                          | (3 модуль TREI, 1 канал)                        |
+# | IT1X_TP         | 1 порог                       | 3+2                          |                         |
+# | IT2X_TP         | 2 порог                       | 3+3                          |                         |
+# | MESSAGE_ON      | Сообщение при сработке        | .Пожар                       |                         |
+# | PAR_NAME        | Обозначение пар-ра в СИ       | T                            | Тип.изм.(P,L,dP,F)      |
+# | SECOND_QUEUE    | Нал. второй оч. г. туш.       | 1                            |                         |
+# | FRAC_DIGITS     | кол-во цифр после зап. у ан-х | 2                             |                         |
+# |                 |                               |                              |                         |
 
 class FB_SHPS_S:
 #SOUND_ON должен смотреть и вставлять в Severity
@@ -12,14 +34,14 @@ Field = namedtuple('Field', 'name, column, key')
 
 NAME = Field(name='name', column='D', key='name')
 SENSOR_TYPE = Field(name='SensorType', column='N', key='sensor_type')
-#COLOR_OFF = Field(name='ColorOff', column='???', key='color_off')
-#COLOR_OFF-отсутствует в таблице, по умолчанию "серый" поставил
+#COLOR_OFF-отсутствует в таблице, по умолчанию в функции установил пар-тр "Серый"
 COLOR_ON = Field(name='ColorOn', column='Q', key='color_on')
 GP = Field(name='GeneralPlan', column='J', key='gp')
 SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')
 MESSAGE_ON = Field(name='MessageOn', column='O', key='message_on')
 DESCRIPTION = Field(name='Description', column='E', key='description')
-SEVERITY = Field(name='SeverityOn', column='???', key='severity') # неверный столбец
+SEVERITY = Field(name='SeverityOn', column='???', key='severity') # SEVERITY формируется из SOUND_ON,
+# если в SOUND_ON значение пожар, слдовательно в Severity будет значение "2"
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 
 NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SOUND_ON, MESSAGE_ON, DESCRIPTION]
@@ -39,7 +61,7 @@ COLOR_ON = Field(name='ColorOn', column='Q', key='color_on')
 GP = Field(name='GeneralPlan', column='J', key='gp')
 SOUND_ON = Field(name='SoundOn', column='P', key='sound_on')# под вопросом нужно или нет
 DESCRIPTION = Field(name='Description', column='E', key='description')
-SEVERITY = Field(name='SeverityOn', column='???', key='severity')
+SEVERITY = Field(name='SeverityOn', column='???', key='severity')# SEVERITY формируется из SOUND_ON
 IVXX_TP = Field(name='IVXX_TP', column='Y', key='ivxx_tp')
 
 NON_EMPTY_FIELDS = [NAME, SIREN_TYPE, GP, SOUND_ON, DESCRIPTION]
@@ -52,7 +74,7 @@ Field = namedtuple('Field', 'name, column, key')
 NAME = Field(name='name', column='D', key='name')
 E_UNIT = Field(name='EUnit', column='L', key='e_unit')
 #FRAC_DIGITS = Field(name='FracDigits', column='???', key='frac_digits')
-#FRAC_DIGITS - задает сколько цифр будет после запятой у аналоговых  датчиков, пока по умолчанию ставлю 2
+#FRAC_DIGITS - задает сколько цифр будет после запятой у аналоговых  датчиков, пока по умолчанию ставлю 2 в функции cоздания omx
 SENSOR_POSITION = Field(name='Sensor_Position', column='N', key='sensor_position')
 SENSOR_TYPE = Field(name='Sensor_Type', column='O', key='sensor_type')
 DESCRIPTION = Field(name='Description', column='E', key='description')

@@ -165,6 +165,7 @@ def create_omx_obj_for_AI(name: str,
     return omx_block
 
 
+
 def create_omx_obj_for_UPG(name: str,
                            description: str,
                            second_queue: str,
