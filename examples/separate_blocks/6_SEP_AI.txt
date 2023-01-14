@@ -1,0 +1,10 @@
+  <ct:object name="GPA_PT1" base-type="Types.FB_AI_S.FB_AI_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="61b5bf79-fe47-4739-b930-ab6282f1e6e7">
+    <attribute type="Attributes.EUnit" value="°C" />
+    <attribute type="Attributes.FracDigits" value="2" />
+    <attribute type="Attributes.ParName" value="T" />
+    <attribute type="Attributes.Sensor_Position" value="PT1" />
+    <attribute type="Attributes.Sensor_Type" value="КТД-50" />
+    <attribute type="unit.System.Attributes.Description" value="ПК ГПА-31. Датчик температуры PT1" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+    <attribute type="Attributes.GeneralPlan" value="ДИАГ ПК ГПА31" />
+  </ct:object>

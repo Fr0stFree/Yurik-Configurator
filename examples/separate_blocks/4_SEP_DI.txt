@@ -1,0 +1,12 @@
+  </ct:object>
+  <ct:object name="GPA_FROM_SAU_2" base-type="Types.FB_DI_S.FB_DI_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="e0151616-b0da-41eb-bae8-809f4f09426b">
+    <attribute type="Attributes.ColorOff" value="Серый" />
+    <attribute type="Attributes.ColorOn" value="Зеленый" />
+    <attribute type="Attributes.MessageOn" value=". Сработка" />
+    <attribute type="Attributes.SeverityOn" value="18" />
+    <attribute type="Attributes.SoundOn" value="Телесигнализация" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Вентиляция ОД отключена" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА31" />
+    <attribute type="Attributes.SensorType" value="2" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+  </ct:object>

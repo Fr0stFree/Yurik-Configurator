@@ -1,0 +1,9 @@
+  </ct:object>
+  <ct:object name="GPA_TO_NKU_1" base-type="Types.FB_DO_STB_S.FB_DO_STB_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="2c67699c-d517-489d-9c8c-09b61a593b44">
+    <attribute type="Attributes.GeneralPlan" value="ГПА31" />
+    <attribute type="Attributes.ColorOn" value="Красный" />
+    <attribute type="Attributes.SoundOn" value="Телесигнализация" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. Пожар БНКУ" />
+    <attribute type="Attributes.SeverityOn" value="18" />
+    <attribute type="Attributes.OXON_TP" value="-" />
+  </ct:object>

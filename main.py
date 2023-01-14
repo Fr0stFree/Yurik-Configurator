@@ -10,10 +10,10 @@ from core import settings
 from core import validators
 
 
-INPUT_FILE_PATH = 'input_data.xlsx'
-SHEET_NAME = 'Таблица'
-OUTPUT_FILE_PATH = 'output.omx-export'
-LOOKING_VALUE = 'FB_SHPS_S'
+# INPUT_FILE_PATH = 'input_data.xlsx'
+# SHEET_NAME = 'Таблица'
+# OUTPUT_FILE_PATH = 'output.omx-export'
+# LOOKING_VALUE = 'FB_SHPS_S'
 
 
 class Configurator(GraphicalUserInterface):

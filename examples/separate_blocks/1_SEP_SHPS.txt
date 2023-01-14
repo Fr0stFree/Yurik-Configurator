@@ -1,0 +1,12 @@
+  </ct:object>
+  <ct:object name="GPA_BTH_401" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="82550366-42be-4d81-b0ad-fd17a7ad7d7c">
+    <attribute type="Attributes.SensorType" value="1" />
+    <attribute type="Attributes.ColorOff" value="-" />
+    <attribute type="Attributes.ColorOn" value="-" />
+    <attribute type="Attributes.GeneralPlan" value="ГПА31" />
+    <attribute type="Attributes.SoundOn" value="Тревога" />
+    <attribute type="Attributes.MessageOn" value=". Внимание" />
+    <attribute type="unit.System.Attributes.Description" value="ГПА-31. ИП дымовой BTH401" />
+    <attribute type="Attributes.SeverityOn" value="12" />
+    <attribute type="Attributes.IVXX_TP" value="-" />
+  </ct:object>
