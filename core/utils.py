@@ -26,7 +26,7 @@ def is_acceptable(cell_c, cell_b) -> bool:
 
 
 def create_omx_obj_for_SHPS(name: str, sensor_type: str, sound_on: str, message_on: str, severity: str,
-                   color_on: str = '-', gp: str = '-', description: str = '-',
+                   , gp: str = '-', description: str = '-',
                    ivxx_tp: str = '-') -> str:
     """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
     _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
@@ -80,7 +80,7 @@ def create_omx_obj_for_QSA(name: str,
     omx_block = (
         f'  <ct:object {NAME.name}="{name}" base-type="Types.FB_QSA_S.FB_QSA_S_PLC" aspect="Aspects.PLC" access-level="public" uuid="{_id}">\n'
         f'    <attribute type="Attributes.{E_UNIT.name}" value="{e_unit}" />\n'
-        f'    <attribute type="Attributes.FracDigits" value="2" />
+        f'    <attribute type="Attributes.FracDigits" value="2" />\n'
         f'    <attribute type="Attributes.{SENSOR_POSITION.name}" value="{sensor_position}" />\n'
         f'    <attribute type="Attributes.{SENSOR_TYPE.name}" value="{sensor_type}" />\n'
         f'    <attribute type="Attributes.{DESCRIPTION.name}" value="{description}" />\n'
@@ -116,9 +116,10 @@ def create_omx_obj_for_DI(name: str, sensor_type: str, sound_on: str, message_on
     return
 
 
-def create_omx_obj_for_DO(name: str, sensor_type: str, sound_on: str, message_on: str, severity: str,
-                   color_on: str = '-', gp: str = '-', description: str = '-',
-                   ivxx_tp: str = '-') -> str:
+def create_omx_obj_for_DO(name: str,
+
+                        sound_on: str, severity: str,
+                   color_on: str = '-', gp: str = '-', description: str = '-') -> str:
     """Функция создания omx-объекта с заданными параметрами для записи в текстовый файл."""
     _id = uuid.uuid5(uuid.NAMESPACE_DNS, name)
     omx_block = (

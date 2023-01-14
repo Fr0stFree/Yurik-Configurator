@@ -1,27 +1,34 @@
 from collections import namedtuple
 
-# | Переменная      | Атрибут                       | Пример                       | Комментарий               |
-# | --------------- | ----------------------------- | ---------------------------- | ----------------------- |
-# | NAME            | Имя датчика                   | GPA_QT_100                   |                         |
-# | SIREN_TYPE      | Тип оповещателя               | Свет                         |                         |
-# | COLOR_ON        | Цвет при сработке             | Красный                      |                         |
-# | GP              | Мнемосхема                    | ГПА31                        |                         |
-# | SOUND_ON        | Звук при сработке             | Пожар                        |                         |
-# | DESCRIPTION     | Описание                      | ГПА-31. Газоанализатор QT202 |                         |
-# | SEVERITY        | Важность при сработке         | 2                            | Формируется из SOUND_ON |
-# | IVXX_TP         | ==Входн знач== Адр. подкл.    | 2+7                          |                         |
-# | E_UNIT          | Единицы измерения             | %                            |                         |
-# | SENSOR_POSITION | Позиция датчика               | QT100                        |                         |
-# | SENSOR_TYPE     | Тип датчика                   | КТД-50                       |2 SHPS AI проверить                     |
-# | SUBSTANCE       | Тип вещества                  | Метан                        |                         |
-# | IFEX_TP         | Неисправность   пер.          | 3+1                          | (3 модуль TREI, 1 канал)                        |
-# | IT1X_TP         | 1 порог                       | 3+2                          |                         |
-# | IT2X_TP         | 2 порог                       | 3+3                          |                         |
-# | MESSAGE_ON      | Сообщение при сработке        | .Пожар                       |                         |
-# | PAR_NAME        | Обозначение пар-ра в СИ       | T                            | Тип.изм.(P,L,dP,F)      |
-# | SECOND_QUEUE    | Нал. второй оч. г. туш.       | 1                            |                         |
-# | FRAC_DIGITS     | кол-во цифр после зап. у ан-х | 2                             |                         |
-# |                 |                               |                              |                         |
+# | Яч.+переменная     | Атрибут                       | Пример           | Блоки               | Комментарий                |
+# | ------------------ |:----------------------------- |:---------------- | ------------------- | -------------------------- |
+# | [D**]NAME**        | Имя датчика                   | GPA_QT_100       | Все                 |                            |
+# | [N]SIREN_TYPE      | Тип оповещателя               | Свет             | SHOP                |                            |
+# | [Q]COLOR_ON        | Цвет при сработке             | Красный          | SHPS SHOP DI DO     |                            |
+# | [J]GP              | Мнемосхема                    | ГПА31            | Все                 |                            |
+# | [P]SOUND_ON        | Звук при сработке             | Пожар            | SHPS SHOP DI DO     | Под вопросом нужно или нет |
+# | [E]DESCRIPTION     | Описание                      | ГПА-31.Г-р QT202 | Все                 |                            |
+# | [-]SEVERITY        | Важность при сработке         | 2                | SHPS SHOP DI DO     | Формируется из SOUND_ON    |
+# | [Y]IVXX_TP         | Входн. знач./Адр. подкл.      | 2+7              | SHPS SHOP QSA DI AI |                            |
+# | [L]E_UNIT          | Единицы измерения             | %                | QSA AI              |                            |
+# | [N]SENSOR_POSITION | Позиция датчика               | QT100            | QSA AI              |                            |
+# | [O,N]SENSOR_TYPE   | Тип датчика                   | КТД-50           | SHPS QSA DI AI      | 2 SHPS AI проверить        |
+# | [N]SUBSTANCE       | Тип вещества                  | Метан            | QSA                 |                            |
+# | [AD]IFEX_TP        | Неисправность   пер.          | 3+1              | QSA                 | (3 модуль TREI, 1 канал)   |
+# | [Z]IT1X_TP         | 1 порог                       | 3+2              | QSA                 |                            |
+# | [AA]IT2X_TP        | 2 порог                       | 3+3              | QSA                 |                            |
+# | [O]MESSAGE_ON      | Сообщение при сработке        | .Пожар           | SHPS DI             |                            |
+# | [K]PAR_NAME        | Обозначение пар-ра в СИ       | T                | AI                  | Тип.изм.(P,L,dP,F)         |
+# | [N]SECOND_QUEUE    | Нал. второй оч. г. туш.       | 1                | UPG                 |                            |
+# | [-]FRAC_DIGITS     | кол-во цифр после зап. у ан-х | 2                | QSA AI              | По умолч. в функц - 2      |
+
+#   <ct:object name="DO" access-level="public" uuid="54cd6969-f334-4893-b36b-dc9293cd4cba">
+#       <attribute type="unit.Server.Attributes.NodeRelativePath" />
+#       <attribute type="unit.Server.Attributes.IsObject" value="false" />
+
+#  Эти строчки создают папку в DevStudio, для определенного типа устройств в данном случае DO.
+#  Они необходимы только в первом блоке набора одного типа датчиков.
+
 
 class FB_SHPS_S:
 #SOUND_ON должен смотреть и вставлять в Severity
@@ -129,7 +136,7 @@ DESCRIPTION = Field(name='Description', column='E', key='description')
 SEVERITY = Field(name='SeverityOn', column='???', key='severity')#вычисляется значение из SOUND_ON
 OXON_TP = Field(name='OXON_TP', column='AE', key='oxon_tp')
 
-NON_EMPTY_FIELDS = [NAME, SENSOR_TYPE, GP, SOUND_ON, DESCRIPTION]
+NON_EMPTY_FIELDS = [NAME, GP, SOUND_ON, DESCRIPTION]
 
 
 class FB_AI_S:
