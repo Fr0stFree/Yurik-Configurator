@@ -131,3 +131,5 @@ dmypy.json
 *.xlsx
 *.xls
 *.omx*
+
+.idea/

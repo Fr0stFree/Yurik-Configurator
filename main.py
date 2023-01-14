@@ -5,15 +5,11 @@ import PySimpleGUI as GUI
 from openpyxl.worksheet.worksheet import Worksheet
 
 from core.gui import GraphicalUserInterface
-from core.utils import process_row, save_data, load_sheet
+from core.utils import save_data, load_sheet
+from core.sensors import Sensor, FB_SHPS_S
+from core.exceptions import InvalidValueError, UnknownSensorTypeError
 from core import settings
 from core import validators
-
-
-# INPUT_FILE_PATH = 'input_data.xlsx'
-# SHEET_NAME = 'Таблица'
-# OUTPUT_FILE_PATH = 'output.omx-export'
-# LOOKING_VALUE = 'FB_SHPS_S'
 
 
 class Configurator(GraphicalUserInterface):
@@ -84,16 +80,23 @@ class Configurator(GraphicalUserInterface):
     # Внутренний метод для обработки данных
     def _process_data(self, min_row: int, max_row: int):
         self.stop_process_btn.update(disabled=False)
-        progress = 0
         self.omx_file = '<omx xmlns="system" xmlns:ct="automation.control">\n'
         for row in range(int(min_row), int(max_row) + 1):
             if not self.process:
                 break
             try:
-                self.omx_file += process_row(self.sheet, row)
+                sensor_name = self.sheet[f'C{row}'].value
+                try:
+                    sensor_type = Sensor.recognize_signature(name=sensor_name)
+                    print(f'В строке {row} опознан датчик типа "{sensor_type.__name__}"...', end=' ')
+                except UnknownSensorTypeError:
+                    print(f'Ошибка. Неизвестный тип датчика - "{sensor_name}" в строке {row}.')
+                    continue
+                
+                self.omx_file += sensor_type.process(self.sheet, row)
                 print(f'Строка {row} обработана.')
-            except ValueError as exc:
-                print(exc)
+            except InvalidValueError as exc:
+                print(f'В строке {row} обнаружена ошибка: {exc}')
             finally:
                 try:
                     progress = int((row - min_row) / (max_row - min_row) * 100)
