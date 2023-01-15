@@ -49,7 +49,8 @@ class Configurator(GraphicalUserInterface):
 
             # Сохранение данных
             elif event == self.save_data_btn.key:
-                path = GUI.popup_get_file('Save data', save_as=True,
+                path = GUI.popup_get_file(message='Save data',
+                                          save_as=True,
                                           file_types=(('OMX files', '*.omx-export'),))
                 if path:
                     if not path.endswith('.omx-export'):
