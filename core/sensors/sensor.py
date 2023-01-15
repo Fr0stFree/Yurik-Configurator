@@ -39,12 +39,21 @@ from core.fields import Field
 """
 
 class Sensor:
+    CLASS_NAME: str
+    BASE_TYPE: str
+
     def __init__(self, **kwargs) -> None:
         self.pk = uuid.uuid5(uuid.NAMESPACE_DNS, kwargs.get('name'))
         self.row = kwargs.get('row')
         for field in self.__class__.__dict__.values():
             if isinstance(field, Field):
                 setattr(self, field.key, kwargs.get(field.key, None))
+    
+    def __str__(self):
+        return f'<{getattr(self, self.Name.key)} {getattr(self, self.GP.key)}>'
+    
+    def __repr__(self):
+        return f'<{getattr(self, self.Name.key)}>'
 
     @classmethod
     def create(cls, sheet: Worksheet, row: int) -> 'Sensor':
@@ -57,6 +66,21 @@ class Sensor:
         sensor_type = cls._recognize_signature(sensor_name)
         return sensor_type._parse_row(sheet, row)
 
+    
+    @classmethod
+    def clusterize(cls, sensors: list[Type['Sensor']]) -> str:
+        """
+        Метод для группировки датчиков по типу. На вход получает список объектов датчиков,
+        возвращает строку
+        """
+        group_pk = uuid.uuid5(uuid.NAMESPACE_DNS, cls.CLASS_NAME)
+        start_string = (
+            f'  <ct:object name="{cls.CLASS_NAME}" access-level="public" uuid="{group_pk}">\n'
+            '    <attribute type="unit.Server.Attributes.NodeRelativePath" />\n'
+            '    <attribute type="unit.Server.Attributes.IsObject" value="false" />\n'
+        )
+        end_string = '  </ct:object>\n'
+        return start_string + ''.join([sensor.to_omx() for sensor in sensors]) + end_string
 
     @classmethod
     def _parse_row(cls, sheet: Worksheet, row: int):

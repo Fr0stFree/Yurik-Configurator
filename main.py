@@ -1,3 +1,4 @@
+import sys
 from typing import Optional
 from threading import Thread
 import os
@@ -80,6 +81,8 @@ class Configurator(GraphicalUserInterface):
     # Внутренний метод для обработки данных
     def process_data(self, min_row: int, max_row: int):
         self.stop_process_btn.update(disabled=False)
+        failures = 0
+        sensors = {}
         with open(self.omx_file_path, 'w') as omx_file:
             omx_file.write(settings.OMX_FILE_START_STRING)
             for row in range(min_row, max_row+1):
@@ -94,11 +97,21 @@ class Configurator(GraphicalUserInterface):
                     print(f'В строке {row} опознан {sensor}', end=' ')
                 except ValidationError as exc:
                     print(f'Ошибка в строке {row}: {exc}')
+                    failures += 1
+                    if failures >= settings.MAX_FAILURES_PER_RUN:
+                        print('Хуета какая-то, проверь данные в таблице, они нихуя не валидны.')
+                        break
                 else:
-                    omx_file.write(sensor.to_omx())
+                    failures = 0
+                    sensors.setdefault(sensor.__class__.__name__, []).append(sensor)
                     print(f'...обработано')
                 finally:
                     self.progress_bar.update_bar(get_progress(row, min_row, max_row))
+            for sensor_type, sensor_list in sensors.items():
+                sensor_class = sensor_list[0].__class__
+                cluster = sensor_class.clusterize(sensor_list)
+                omx_file.write(cluster)
+                
             omx_file.write(settings.OMX_FILE_END_STRING)
             print('Обработка завершена.')
         
