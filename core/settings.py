@@ -1,3 +1,7 @@
+SKIP_FLAG_COLUMN = 'B'
+SENSOR_TYPE_COLUMN = 'C'
+OMX_FILE_START_STRING = '<omx xmlns="system" xmlns:ct="automation.control">\n'
+OMX_FILE_END_STRING = '</omx>'
 WINDOW_SIZE = 600, 320
 LABEL_SIZE = 10, 1
 INPUT_SIZE = 10, 1

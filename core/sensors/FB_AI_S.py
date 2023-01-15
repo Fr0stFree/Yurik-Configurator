@@ -3,20 +3,19 @@ from core.fields import Field, SeverityField
 from .sensor import Sensor
 
 
-class FB_SHPS_S(Sensor):
+class FB_AI_S(Sensor):
     """
-    Класс для работы с датчиками типа FB_SHPS_S. Поле Severity отсутствует в таблице, его значение
+    Класс для работы с датчиками типа FB_AI_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.FB_SHPS_S.FB_SHPS_S_PLC'
+    BASE_TYPE = 'Types.FB_AI_S.FB_AI_S_PLC'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
-    SensorType = Field(name='SensorType', column='N', validators=[value_is_not_none_or_empty])
-    ColorOn = Field(name='ColorOn', column='Q')
+    EUnit = Field(name='EUnit', column='L', validators=[value_is_not_none_or_empty])
+    ParName = Field(name='ParName', column='K', validators=[value_is_not_none_or_empty])
+    SensorType = Field(name='Sensor_Type', column='O', validators=[value_is_not_none_or_empty])
+    SensorPosition = Field(name='Sensor_Position', column='N')
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
-    SoundOn = Field(name='SoundOn', column='P', validators=[value_is_not_none_or_empty])
-    MessageOn = Field(name='MessageOn', column='O', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
-    Severity = SeverityField(name='SeverityOn', column='P')
     IvxxTp = Field(name='IVXX_TP', column='Y')
     
     def __str__(self):
@@ -26,15 +25,14 @@ class FB_SHPS_S(Sensor):
     def to_omx(self) -> str:
         omx_block = (
             f'  <ct:object {self.Name.name}="{getattr(self, self.Name.key)}" base-type="{self.BASE_TYPE}" aspect="Aspects.PLC" access-level="public" uuid="{self.pk}">\n'
+            f'    <attribute type="Attributes.{self.EUnit.name}" value="{getattr(self, self.EUnit.key)}"/>\n'
+            f'    <attribute type="Attributes.FracDigits" value="2" />\n'
+            f'    <attribute type="Attributes.{self.ParName.name}" value="{getattr(self, self.ParName.key)}"/>\n'
+            f'    <attribute type="Attributes.{self.SensorPosition.name}" value="{getattr(self, self.SensorPosition.key)}"/>\n'
             f'    <attribute type="Attributes.{self.SensorType.name}" value="{getattr(self, self.SensorType.key)}"/>\n'
-            f'    <attribute type="Attributes.ColorOff" value="Серый" />\n'
-            f'    <attribute type="Attributes.{self.ColorOn.name}" value="{getattr(self, self.ColorOn.key)}"/>\n'
-            f'    <attribute type="Attributes.{self.GP.name}" value="{getattr(self, self.GP.key)}"/>\n'
-            f'    <attribute type="Attributes.{self.SoundOn.name}" value="{getattr(self, self.SoundOn.key)}"/>\n'
-            f'    <attribute type="Attributes.{self.MessageOn.name}" value="{getattr(self, self.MessageOn.key)}"/>\n'
             f'    <attribute type="unit.System.Attributes.{self.Description.name}" value="{getattr(self, self.Description.key)}"/>\n'
-            f'    <attribute type="Attributes.{self.Severity.name}" value="{getattr(self, self.Severity.key)}"/>\n'
             f'    <attribute type="Attributes.{self.IvxxTp.name}" value="{getattr(self, self.IvxxTp.key)}"/>\n'
+            f'    <attribute type="Attributes.{self.GP.name}" value="{getattr(self, self.GP.key)}"/>\n'
             f'  </ct:object>\n'
         )
         return omx_block

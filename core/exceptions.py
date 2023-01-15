@@ -1,10 +1,14 @@
-class ConfiguratorError(Exception):
+class ValidationError(Exception):
     pass
 
 
-class InvalidValueError(ConfiguratorError):
+class InvalidValueError(ValidationError):
     pass
 
 
-class UnknownSensorTypeError(ConfiguratorError):
+class UnknownSensorTypeError(ValidationError):
+    pass
+
+
+class UnknownSignalTypeError(ValidationError):
     pass

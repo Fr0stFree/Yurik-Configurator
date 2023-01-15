@@ -1,15 +1,16 @@
 from typing import Optional
 from threading import Thread
+import os
 
 import PySimpleGUI as GUI
 from openpyxl.worksheet.worksheet import Worksheet
 
 from core.gui import GraphicalUserInterface
-from core.utils import save_data, load_sheet
-from core.sensors import Sensor, FB_SHPS_S
-from core.exceptions import InvalidValueError, UnknownSensorTypeError
+from core.utils import save_data, load_sheet, get_calculation_limits, get_progress
+from core.sensors import Sensor
+from core.exceptions import ValidationError, InvalidValueError
 from core import settings
-from core import validators
+
 
 
 class Configurator(GraphicalUserInterface):
@@ -18,8 +19,8 @@ class Configurator(GraphicalUserInterface):
         self.min_row: Optional[int] = None
         self.max_row: Optional[int] = None
         self.sheet: Optional[Worksheet] = None
-        self.omx_file: Optional[str] = None
-        self.process: bool = True
+        self.omx_file_path = os.path.join(os.getcwd(), 'buffer.txt')
+        self.is_processing: bool = True
 
     def run(self):
         while True:
@@ -32,7 +33,7 @@ class Configurator(GraphicalUserInterface):
                     self.sheet = load_sheet(file_path=path)
                     if self.sheet:
                         self.window[self.process_data_btn.key].update(disabled=False)
-                        self.process = True
+                        self.is_processing = True
                         print(f'Таблица "{self.sheet.title}" успешно загружена.')
                     else:
                         print('Ошибка загрузки таблицы.')
@@ -40,32 +41,30 @@ class Configurator(GraphicalUserInterface):
             # Обработка данных
             elif event == self.process_data_btn.key:
                 try:
-                    min_row, max_row = validators.min_max_rows(self.sheet, self.min_row, self.max_row)
-                except ValueError as exc:
-                    print(exc)
+                    min_row, max_row = get_calculation_limits(self.sheet, self.min_row, self.max_row)
+                except InvalidValueError as exc:
+                    print('Ошибка в полях диапазона расчёта:', exc)
                     continue
-                Thread(target=self._process_data, args=(min_row, max_row)).start()
+                Thread(target=self.process_data, args=(min_row, max_row)).start()
 
             # Сохранение данных
             elif event == self.save_data_btn.key:
                 path = GUI.popup_get_file('Save data', save_as=True,
                                           file_types=(('OMX files', '*.omx-export'),))
                 if path:
-                    path = path if path.endswith('.omx-export') else path + '.omx-export'
-                    if self.omx_file is not None:
-                        save_data(path, self.omx_file)
-                        print(f'Данные успешно сохранены по адресу {path}.')
-                    self.omx_file = None
-                    self.process_data_btn.update(disabled=True)
-                    self.save_data_btn.update(disabled=True)
+                    if not path.endswith('.omx-export'):
+                        path += '.omx-export'
+                    save_data(self.omx_file_path, path)
+                    print(f'Файл "{path}" успешно сохранён.')
 
             # Остановка обработки данных
             elif event == self.stop_process_btn.key:
-                self.process = False
+                self.is_processing = False
 
             # Получение минимального и максимального номеров строк
             elif event == self.min_row_input.key:
                 self.min_row = values[self.min_row_input.key]
+
             elif event == self.max_row_input.key:
                 self.max_row = values[self.max_row_input.key]
 
@@ -78,35 +77,31 @@ class Configurator(GraphicalUserInterface):
         self.window.close()
 
     # Внутренний метод для обработки данных
-    def _process_data(self, min_row: int, max_row: int):
+    def process_data(self, min_row: int, max_row: int):
         self.stop_process_btn.update(disabled=False)
-        self.omx_file = '<omx xmlns="system" xmlns:ct="automation.control">\n'
-        for row in range(int(min_row), int(max_row) + 1):
-            if not self.process:
-                break
-            try:
-                sensor_name = self.sheet[f'C{row}'].value
-                try:
-                    sensor_type = Sensor.recognize_signature(name=sensor_name)
-                    print(f'В строке {row} опознан датчик типа "{sensor_type.__name__}"...', end=' ')
-                except UnknownSensorTypeError:
-                    print(f'Ошибка. Неизвестный тип датчика - "{sensor_name}" в строке {row}.')
+        with open(self.omx_file_path, 'w') as omx_file:
+            omx_file.write(settings.OMX_FILE_START_STRING)
+            for row in range(min_row, max_row+1):
+                if not self.is_processing:
+                    break
+                skip_flag = self.sheet[f'{settings.SKIP_FLAG_COLUMN}{row}'].value
+                if not skip_flag:
+                    print(f'В строке {row} опознан флаг пропуска ...пропускаю.')
                     continue
-                
-                self.omx_file += sensor_type.process(self.sheet, row)
-                print(f'Строка {row} обработана.')
-            except InvalidValueError as exc:
-                print(f'В строке {row} обнаружена ошибка: {exc}')
-            finally:
                 try:
-                    progress = int((row - min_row) / (max_row - min_row) * 100)
-                except ZeroDivisionError:
-                    progress = 100
-                self.progress_bar.update_bar(progress)
-        self.omx_file += '</omx>'
-        print('Обработка завершена.')
-        self.stop_process_btn.update(disabled=False)
-        self.window[self.process_data_btn.key].update(disabled=True)
+                    sensor = Sensor.create(self.sheet, row)
+                    print(f'В строке {row} опознан {sensor}', end=' ')
+                except ValidationError as exc:
+                    print(f'Ошибка в строке {row}: {exc}')
+                else:
+                    omx_file.write(sensor.to_omx())
+                    print(f'...обработано')
+                finally:
+                    self.progress_bar.update_bar(get_progress(row, min_row, max_row))
+            omx_file.write(settings.OMX_FILE_END_STRING)
+            print('Обработка завершена.')
+        
+        self.window[self.process_data_btn.key].update(disabled=False)
         self.window[self.stop_process_btn.key].update(disabled=True)
         self.window[self.save_data_btn.key].update(disabled=False)
 
