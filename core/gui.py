@@ -4,7 +4,7 @@ from . import settings
 
 
 class GraphicalUserInterface:
-    GUI.theme('LightGreen5')
+    GUI.theme('LightGrey1')
     GUI.set_options(font='Franklin 10')
 
     def __init__(self):

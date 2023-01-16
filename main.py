@@ -29,7 +29,7 @@ class Configurator(GraphicalUserInterface):
 
             # Загрузка данных
             if event == self.load_data_btn.key:
-                path = GUI.popup_get_file('Load data', file_types=(('Excel files', '*.xlsx'),))
+                path = GUI.popup_get_file('Load data', file_types=(('Excel files', '*.xlsm'),))
                 if path:
                     self.sheet = load_sheet(file_path=path)
                     if self.sheet:
@@ -89,6 +89,9 @@ class Configurator(GraphicalUserInterface):
                 if not self.is_processing:
                     break
                 skip_flag = self.sheet[f'{settings.SKIP_FLAG_COLUMN}{row}'].value
+                if not self.is_processing or skip_flag not in (0, 1):
+                    print('Ваша остановочка, господа.')
+                    break
                 if not skip_flag:
                     print(f'В строке {row} опознан флаг пропуска ...пропускаю.')
                     continue
