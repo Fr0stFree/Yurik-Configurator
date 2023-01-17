@@ -11,7 +11,7 @@ def load_sheet(file_path: str) -> Worksheet | None:
     """Функция загрузки excel-листа из файла."""
     try:
         wb = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
-        sheet = wb.active
+        sheet = wb['Таблица']
     except FileNotFoundError:
         print(f'Файл {file_path} не найден.')
         return None
