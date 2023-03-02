@@ -79,7 +79,7 @@ class Sensor:
             '    <attribute type="unit.Server.Attributes.NodeRelativePath" />\n'
             '    <attribute type="unit.Server.Attributes.IsObject" value="false" />\n'
         )
-        end_string = '  </ct:object>\n'
+        end_string = '</ct:object>\n'
         return start_string + ''.join([sensor.to_omx() for sensor in sensors]) + end_string
 
     @classmethod
