@@ -29,7 +29,7 @@ class Configurator(GraphicalUserInterface):
 
             # Загрузка данных
             if event == self.load_data_btn.key:
-                path = GUI.popup_get_file('Load data', file_types=(('Excel files', '*.xlsx'),))
+                path = GUI.popup_get_file('Load data', file_types=(('Excel files', '*.xlsm'),))
                 if path:
                     self.sheet = load_sheet(file_path=path)
                     if self.sheet:
