@@ -29,6 +29,7 @@ class GraphicalUserInterface:
 
         menu = GUI.Menu([
             ['Разное', 'Об авторе'],
+            ['Инструкция', 'Клик']
         ])
         layout = [
             [menu],

@@ -35,7 +35,7 @@ class Configurator(GraphicalUserInterface):
                     if self.sheet:
                         self.window[self.process_data_btn.key].update(disabled=False)
                         self.is_processing = True
-                        print(f'Таблица "{self.sheet.title}" успешно загружена.')
+                        print(f'Данные из "{self.sheet.title}" успешно загружены.')
                     else:
                         print('Ошибка загрузки таблицы.')
 
@@ -50,7 +50,7 @@ class Configurator(GraphicalUserInterface):
 
             # Сохранение данных
             elif event == self.save_data_btn.key:
-                path = GUI.popup_get_file(message='Save data',
+                path = GUI.popup_get_file(message='Сохранить данные',
                                           save_as=True,
                                           file_types=(('OMX files', '*.omx-export'),))
                 if path:
@@ -73,6 +73,10 @@ class Configurator(GraphicalUserInterface):
             # Побочное
             elif event == 'Об авторе':
                 GUI.popup('Автор', settings.ABOUT_POPUP_TEXT)
+
+            # Побочное
+            elif event == 'Клик':
+                GUI.popup('Инструкция', settings.INSTRUCTION_POPUP_TEXT)
             elif event == GUI.WIN_CLOSED:
                 break
 
