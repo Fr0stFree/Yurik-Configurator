@@ -9,7 +9,7 @@ class FB_DO_STB_S(Sensor):
     рассчитывается на основе значения в поле SOUND_ON.
     """
     BASE_TYPE = 'Types.FB_DO_STB_S.FB_DO_STB_S_PLC'
-    CLASS_NAME = 'DO  '
+    CLASS_NAME = 'DO'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     ColorOn = Field(name='ColorOn', column='Q')
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])

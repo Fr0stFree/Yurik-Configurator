@@ -9,7 +9,7 @@ class FB_QSA_S(Sensor):
     рассчитывается на основе значения в поле SOUND_ON.
     """
     BASE_TYPE = 'Types.FB_QSA_S.FB_QSA_S_PLC'
-    CLASS_NAME = 'QSA  '
+    CLASS_NAME = 'QSA'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     EUnit = Field(name='EUnit', column='L', validators=[value_is_not_none_or_empty])
     SensorType = Field(name='Sensor_Type', column='O', validators=[value_is_not_none_or_empty])

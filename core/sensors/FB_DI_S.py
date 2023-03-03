@@ -9,7 +9,7 @@ class FB_DI_S(Sensor):
     рассчитывается на основе значения в поле SOUND_ON.
     """
     BASE_TYPE = 'Types.FB_DI_S.FB_DI_S_PLC'
-    CLASS_NAME = 'DI  '
+    CLASS_NAME = 'DI'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     SensorType = Field(name='SensorType', column='N', validators=[value_is_not_none_or_empty])
     ColorOn = Field(name='ColorOn', column='Q')

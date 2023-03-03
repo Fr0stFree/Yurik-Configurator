@@ -1,6 +1,6 @@
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
-from .sensor import Sensor
+from core.sensors import Sensor
 
 
 class FB_AI_S(Sensor):
@@ -9,7 +9,7 @@ class FB_AI_S(Sensor):
     рассчитывается на основе значения в поле SOUND_ON.
     """
     BASE_TYPE = 'Types.FB_AI_S.FB_AI_S_PLC'
-    CLASS_NAME = 'AI  '
+    CLASS_NAME = 'AI'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     EUnit = Field(name='EUnit', column='L', validators=[value_is_not_none_or_empty])
     ParName = Field(name='ParName', column='K', validators=[value_is_not_none_or_empty])
