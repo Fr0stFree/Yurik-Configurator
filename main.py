@@ -111,7 +111,7 @@ class Configurator(GraphicalUserInterface):
                 else:
                     failures = 0
                     sensors.setdefault(sensor.__class__.__name__, []).append(sensor)
-                    print(f'...обработано')
+                    print(f'   ...обработано')
                 finally:
                     self.progress_bar.update_bar(get_progress(row, min_row, max_row))
             for sensor_type, sensor_list in sensors.items():
