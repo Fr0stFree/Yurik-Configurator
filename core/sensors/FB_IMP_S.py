@@ -29,7 +29,7 @@ class FB_IMp_S(Sensor):
     BASE_TYPE = 'Types.FB_IMP_S.FB_IMP_S_PLC'
     CLASS_NAME = 'FB_IMp_S'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
-    Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
+   
 
 
     ColorOn = Field(name='ColorOn', column='Q')
