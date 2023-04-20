@@ -11,7 +11,7 @@ class FB_DI_S(Sensor):
     BASE_TYPE = 'Types.FB_DI_S.FB_DI_S_PLC'
     CLASS_NAME = 'DI'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
-    SensorType = Field(name='SensorType', column='N', validators=[value_is_not_none_or_empty])
+    SensorType = Field(name='SensorType', column='O', validators=[value_is_not_none_or_empty])
     ColorOn = Field(name='ColorOn', column='Q')
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
     SoundOn = Field(name='SoundOn', column='P', validators=[value_is_not_none_or_empty])
