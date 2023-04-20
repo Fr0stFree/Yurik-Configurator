@@ -32,7 +32,7 @@ class FB_OZK_KD_S(Sensor):
     OxonTp = Field(name='OXON_TP', column='AE')
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
     OsofTp = Field(name='ISOF_TP', column='AJ')
-  # IsonTp = Field(name='ISON_TP', column='AE') НЕ НАШЕЛ В ТАБЛИЦЕ
+    IsonTp = Field(name='ISON_TP', column='AI') 
 
     def to_omx(self) -> str:
         omx_block = (
