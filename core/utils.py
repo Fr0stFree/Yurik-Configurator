@@ -25,8 +25,8 @@ def save_data(path_from: str, path_to: str) -> None:
             file_to.write(file_from.read())
 
 
-def get_calculation_limits(sheet: Worksheet, min_row: Optional[str],
-                           max_row: Optional[str]) -> tuple[int, int]:
+def get_calculation_limits(sheet: Worksheet, min_row: Union[str],
+                           max_row: Union[str]) -> tuple[int, int]:
     """Функция получения диапазона расчёта из GUI."""
     for value in (min_row, max_row):
         try:
