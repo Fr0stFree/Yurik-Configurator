@@ -6,6 +6,9 @@
 #       <attribute type="Attributes.GeneralPlan" value="ГП001" />
 #     </ct:object>
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+from core.validators import value_is_not_none_or_empty
+from core.fields import Field, SeverityField
+from core.sensors import Sensor
 
 class FB_SHOP_ALL(Sensor):
     """
