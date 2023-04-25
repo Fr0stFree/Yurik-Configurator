@@ -12,7 +12,7 @@ class FB_SHPS_S(Sensor):
     CLASS_NAME = 'SHPS'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     SensorType = Field(name='SensorType', column='N', validators=[value_is_not_none_or_empty])
-    ColorOn = Field(name='ColorOn', column='Q')
+    ColorOn = Field(name='ColorOn', column='Q', validators=[value_is_not_none_or_empty])
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
     SoundOn = Field(name='SoundOn', column='P', validators=[value_is_not_none_or_empty])
     MessageOn = Field(name='MessageOn', column='O', validators=[value_is_not_none_or_empty])
