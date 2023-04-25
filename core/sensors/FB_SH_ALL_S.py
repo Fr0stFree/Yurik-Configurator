@@ -6,7 +6,12 @@
 #       <attribute type="Attributes.GeneralPlan" value="ГП001" />
 #     </ct:object>
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+from core.validators import value_is_not_none_or_empty
+from core.fields import Field, SeverityField
+from core.sensors import Sensor
+
 class FB_SH_ALL(Sensor):
+  
     """
     Класс для работы с датчиками типа FB_SH_ALL. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
