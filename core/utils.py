@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Union
 
 import openpyxl
 from openpyxl.worksheet.worksheet import Worksheet
@@ -7,7 +7,7 @@ from core.exceptions import InvalidValueError
 from core.validators import value_is_digit_or_none
 
 
-def load_sheet(file_path: str) -> Worksheet | None:
+def load_sheet(file_path: str) -> Union[Worksheet, None]:
     """Функция загрузки excel-листа из файла."""
     try:
         wb = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
