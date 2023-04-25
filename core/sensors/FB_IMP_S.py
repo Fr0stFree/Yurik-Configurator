@@ -33,7 +33,7 @@ class FB_IMp_S(Sensor):
 
 
     ColorOn = Field(name='ColorOn', column='Q')
-        SoundOn = Field(name='SoundOn', column='P', validators=[value_is_not_none_or_empty])
+    SoundOn = Field(name='SoundOn', column='P', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
     IfxxTp = Field(name='IFXX_TP', column='AD')
     IofxTp = Field(name='IOFX_TP', column='AA')
