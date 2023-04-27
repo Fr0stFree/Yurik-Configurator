@@ -12,11 +12,9 @@ class FB_SHOP_S(Sensor):
     CLASS_NAME = 'SHOP'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     SirenType = Field(name='SirenType', column='N', validators=[value_is_not_none_or_empty])
-    ColorOn = Field(name='ColorOn', column='Q')
+    ColorOn = Field(name='ColorOn', column='Q', validators=[value_is_not_none_or_empty])
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
-    SoundOn = Field(name='SoundOn', column='P', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
-    Severity = SeverityField(name='SeverityOn', column='P')
     IvxxTp = Field(name='IVXX_TP', column='Y')
 
     def to_omx(self) -> str:
@@ -25,9 +23,7 @@ class FB_SHOP_S(Sensor):
             f'      <attribute type="Attributes.{self.SirenType.name}" value="{getattr(self, self.SirenType.key)}"/>\n'
             f'      <attribute type="Attributes.{self.ColorOn.name}" value="{getattr(self, self.ColorOn.key)}"/>\n'
             f'      <attribute type="Attributes.{self.GP.name}" value="{getattr(self, self.GP.key)}"/>\n'
-            f'      <attribute type="Attributes.{self.SoundOn.name}" value="{getattr(self, self.SoundOn.key)}"/>\n'
             f'      <attribute type="unit.System.Attributes.{self.Description.name}" value="{getattr(self, self.Description.key)}"/>\n'
-            f'      <attribute type="Attributes.{self.Severity.name}" value="{getattr(self, self.Severity.key)}"/>\n'
             f'      <attribute type="Attributes.{self.IvxxTp.name}" value="{getattr(self, self.IvxxTp.key)}"/>\n'
             f'    </ct:object>\n'
         )
