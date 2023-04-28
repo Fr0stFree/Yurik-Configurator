@@ -10,7 +10,7 @@ from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from core.sensors import Sensor
 
-class FB_SH_ALL(Sensor):
+class FB_SH_ALL_S(Sensor):
   
     """
     Класс для работы с датчиками типа FB_SH_ALL. Поле Severity отсутствует в таблице, его значение
