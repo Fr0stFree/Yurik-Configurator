@@ -10,7 +10,7 @@ from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from core.sensors import Sensor
 
-class FB_SHOP_ALL(Sensor):
+class FB_SHOP_ALL_S(Sensor):
     """
     Класс для работы с датчиками типа FB_DO_STB_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
