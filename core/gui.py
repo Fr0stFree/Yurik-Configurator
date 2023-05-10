@@ -9,6 +9,10 @@ class GraphicalUserInterface:
 
     def __init__(self):
         self.load_data_btn = GUI.Button('Загрузить', key='-LOAD_DATA-', size=settings.BUTTON_SIZE)
+        self.file_path_title = GUI.Text('Файл')
+        self.file_path = GUI.Multiline(key='-FILE_NAME_OUTPUT-', disabled=True, size=(30,3),
+                                       reroute_stdout=True, autoscroll=True, no_scrollbar=True,
+                                       expand_x=True)
         self.min_row_title = GUI.Text('Начальная строка')
         self.min_row_input = GUI.InputText(key='-MIN_ROW-', size=settings.BUTTON_SIZE,
                                            default_text=None, enable_events=True)
@@ -33,7 +37,8 @@ class GraphicalUserInterface:
         ])
         layout = [
             [menu],
-            [self.load_data_btn, GUI.Push(), self.min_row_title, self.min_row_input, self.max_row_title, self.max_row_input],
+            [self.file_path_title, self.file_path, self.load_data_btn],
+            [self.min_row_title, self.min_row_input, self.max_row_title, self.max_row_input, GUI.Push()],
             [self.event_box],
             [self.progress_bar],
             [self.process_data_btn, self.stop_process_btn, GUI.Push(), self.save_data_btn],
