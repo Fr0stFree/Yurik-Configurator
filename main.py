@@ -13,7 +13,6 @@ from core.exceptions import ValidationError, InvalidValueError
 from core import settings
 
 
-
 class Configurator(GraphicalUserInterface):
     def __init__(self):
         super().__init__()
@@ -30,6 +29,8 @@ class Configurator(GraphicalUserInterface):
             # Загрузка данных
             if event == self.load_data_btn.key:
                 path = GUI.popup_get_file('Load data', file_types=(('Excel files', '*.xlsm'),))
+                pathN = path.replace('\n', '')
+                self.window['-FILE_NAME_OUTPUT-'].print(pathN)
                 if path:
                     self.sheet = load_sheet(file_path=path)
                     if self.sheet:
@@ -89,7 +90,7 @@ class Configurator(GraphicalUserInterface):
         sensors = {}
         with open(self.omx_file_path, 'w') as omx_file:
             omx_file.write(settings.OMX_FILE_START_STRING)
-            for row in range(min_row, max_row+1):
+            for row in range(min_row, max_row + 1):
                 if not self.is_processing:
                     break
                 skip_flag = self.sheet[f'{settings.SKIP_FLAG_COLUMN}{row}'].value
@@ -118,10 +119,10 @@ class Configurator(GraphicalUserInterface):
                 sensor_class = sensor_list[0].__class__
                 cluster = sensor_class.clusterize(sensor_list)
                 omx_file.write(cluster)
-                
+
             omx_file.write(settings.OMX_FILE_END_STRING)
             print('Обработка завершена.')
-        
+
         self.window[self.process_data_btn.key].update(disabled=False)
         self.window[self.stop_process_btn.key].update(disabled=True)
         self.window[self.save_data_btn.key].update(disabled=False)
