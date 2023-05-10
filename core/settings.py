@@ -3,7 +3,7 @@ SENSOR_TYPE_COLUMN = 'C'
 OMX_FILE_START_STRING = '<omx xmlns="system" xmlns:ct="automation.control">\n'
 OMX_FILE_END_STRING = '</omx>'
 MAX_FAILURES_PER_RUN = 1000
-WINDOW_SIZE = 600, 320
+WINDOW_SIZE = 700, 420
 LABEL_SIZE = 10, 1
 INPUT_SIZE = 10, 1
 WINDOW_TITLE = 'GA Parser'
