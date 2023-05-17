@@ -21,6 +21,7 @@ class Configurator(GraphicalUserInterface):
         self.sheet: Optional[Worksheet] = None
         self.omx_file_path = os.path.join(os.getcwd(), 'buffer.txt')
         self.is_processing: bool = True
+        self.error_counter = 0
 
     def run(self):
         while True:
@@ -104,7 +105,8 @@ class Configurator(GraphicalUserInterface):
                     sensor = Sensor.create(self.sheet, row)
                     print(f'В строке {row} опознан {sensor}', end=' ')
                 except ValidationError as exc:
-                    print(f'Ошибка в строке {row}: {exc}')
+                    self.error_counter += 1
+                    self.window['-OUTPUT-'].print(f'Ошибка в строке {row}: {exc}', text_color='red')
                     failures += 1
                     if failures >= settings.MAX_FAILURES_PER_RUN:
                         print('Хуета какая-то, проверь данные в таблице, они нихуя не валидны.')
@@ -121,6 +123,7 @@ class Configurator(GraphicalUserInterface):
                 omx_file.write(cluster)
 
             omx_file.write(settings.OMX_FILE_END_STRING)
+            self.window['-ERROR_COUNTER-'].update(self.error_counter)
             print('Обработка завершена.')
 
         self.window[self.process_data_btn.key].update(disabled=False)
