@@ -19,6 +19,10 @@ class GraphicalUserInterface:
         self.max_row_title = GUI.Text('Конечная строка')
         self.max_row_input = GUI.InputText(key='-MAX_ROW-', size=settings.BUTTON_SIZE,
                                            default_text=None, enable_events=True)
+        self.error_counter_title = GUI.Text('Число ошибок')
+        self.error_counter = GUI.Multiline(key='-ERROR_COUNTER-', size=(9,1),
+                                           disabled=True, reroute_stdout=True, autoscroll=False,
+                                           no_scrollbar=True, expand_x=True, do_not_clear=False)
         self.event_box = GUI.Multiline(key='-OUTPUT-', disabled=True, size=settings.EVENT_BOX_SIZE,
                                        reroute_stdout=True, autoscroll=True, no_scrollbar=True,
                                        expand_x=True, expand_y=True)
@@ -38,7 +42,7 @@ class GraphicalUserInterface:
         layout = [
             [menu],
             [self.file_path_title, self.file_path, self.load_data_btn],
-            [self.min_row_title, self.min_row_input, self.max_row_title, self.max_row_input, GUI.Push()],
+            [self.min_row_title, self.min_row_input, self.max_row_title, self.max_row_input, self.error_counter_title, self.error_counter, GUI.Push()],
             [self.event_box],
             [self.progress_bar],
             [self.process_data_btn, self.stop_process_btn, GUI.Push(), self.save_data_btn],
