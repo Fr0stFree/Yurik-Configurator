@@ -23,6 +23,7 @@ class Configurator(GraphicalUserInterface):
         self.is_processing: bool = True
         self.error_counter = 0
 
+
     def run(self):
         while True:
             event, values = self.window.read()
@@ -64,6 +65,10 @@ class Configurator(GraphicalUserInterface):
             # Остановка обработки данных
             elif event == self.stop_process_btn.key:
                 self.is_processing = False
+            # HMI
+            elif event == self.hmi_process_btn.key:
+                self.is_processing = False
+
 
             # Получение минимального и максимального номеров строк
             elif event == self.min_row_input.key:
