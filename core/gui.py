@@ -30,6 +30,8 @@ class GraphicalUserInterface:
                                            size=settings.BUTTON_SIZE, disabled=True)
         self.stop_process_btn = GUI.Button(button_text='Стоп', key='-STOP_PROCESS-',
                                            size=settings.BUTTON_SIZE, disabled=True)
+        self.hmi_process_btn = GUI.Button(button_text='HMI', key='-HMI_PROCESS-',
+                                           size=settings.BUTTON_SIZE, disabled=True)
         self.save_data_btn = GUI.Button(button_text='Сохранить', key='-SAVE_DATA-',
                                         size=settings.BUTTON_SIZE, disabled=True)
         self.progress_bar = GUI.ProgressBar(max_value=100, key='-PROGRESS_BAR-',
@@ -45,7 +47,7 @@ class GraphicalUserInterface:
             [self.min_row_title, self.min_row_input, self.max_row_title, self.max_row_input, self.error_counter_title, self.error_counter, GUI.Push()],
             [self.event_box],
             [self.progress_bar],
-            [self.process_data_btn, self.stop_process_btn, GUI.Push(), self.save_data_btn],
+            [self.process_data_btn, self.stop_process_btn, GUI.Push(), self.save_data_btn, self.hmi_process_btn],
         ]
         self.window = GUI.Window(title=settings.WINDOW_TITLE, layout=layout,
                                  size=settings.WINDOW_SIZE)
