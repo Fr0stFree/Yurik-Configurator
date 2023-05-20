@@ -1,26 +1,7 @@
-# <ct:object name="IMp" access-level="public" access-scope="global" uuid="a10470aa-cbdc-49c1-ae60-665208b5c7e1">
-#     <attribute type="unit.Server.Attributes.NodeRelativePath" />
-#     <attribute type="unit.Server.Attributes.IsObject" value="false" />
-#     <ct:object name="GP001_V_01" base-type="Types.FB_IMp_S.FB_IMp_S_PLC" access-level="public" access-scope="global" aspect="Aspects.PLC" uuid="31c4bb26-0f8e-4897-80cd-2490a135e395">
-#       <attribute type="unit.System.Attributes.Description" value="ГП 1. Вентилятор В1" />
-#       <attribute type="Attributes.IFXX_TP" value="-" />
-#       <attribute type="Attributes.IOFX_TP" value="-" />
-#       <attribute type="Attributes.IONX_TP" value="-" />
-#       <attribute type="Attributes.IRCX_TP" value="-" />
-#       <attribute type="Attributes.OXOF_TP" value="-" />
-#       <attribute type="Attributes.OXON_TP" value="-" />
-#       <attribute type="Attributes.ILCX_TP" value="-" />
-#       <attribute type="Attributes.OXSP_TP" value="-" />
-#       <attribute type="Attributes.GeneralPlan" value="ГП001" />
-#       <attribute type="Attributes.ISOF_TP" value="-" />
-#       <attribute type="Attributes.ISON_TP" value="-" />
-#     </ct:object>
-
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from .sensor import Sensor
 
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 class FB_IMp_S(Sensor):
     """
     Класс для работы с датчиками типа FB_IMP_S. Поле Severity отсутствует в таблице, его значение

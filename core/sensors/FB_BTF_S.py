@@ -1,20 +1,7 @@
-# <ct:object name="BTF" access-level="public" access-scope="global" uuid="316fd334-7992-483b-9660-cce7126cf8a0">
-#     <attribute type="unit.Server.Attributes.NodeRelativePath" />
-#     <attribute type="unit.Server.Attributes.IsObject" value="false" />
-#     <ct:object name="GP001_BTF_11_01" base-type="Types.FB_BTF_S.FB_BTF_S_PLC" access-level="public" access-scope="global" aspect="Aspects.PLC" uuid="095471d8-5ccc-472d-96d7-de94e0a2662f">
-#       <attribute type="Attributes.SensorType" value="6" />
-#       <attribute type="Attributes.SoundOn" value="Тревога" />
-#       <attribute type="Attributes.MessageOn" value=". Внимание" />
-#       <attribute type="unit.System.Attributes.Description" value="ГП 1. ИП пламени BTF11/1" />
-#       <attribute type="Attributes.SeverityOn" value="5" />
-#       <attribute type="Attributes.GeneralPlan" value="ГП001" />
-#       <attribute type="Attributes.IFEX_TP" value="-" />
-#       <attribute type="Attributes.IVXX_TP" value="-" />
-#     </ct:object>
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from core.sensors import Sensor
+
 
 class FB_BTF_S(Sensor):
     """

@@ -1,15 +1,8 @@
-# <ct:object name="MPS" access-level="public" access-scope="global" uuid="25c8e6ee-b54f-4199-a249-a5d158e36b09">
-#     <attribute type="unit.Server.Attributes.NodeRelativePath" />
-#     <attribute type="unit.Server.Attributes.IsObject" value="false" />
-#     <ct:object name="MOPS_02_01" base-type="Types.DIAG.FB_MPS_S.FB_MPS_S_PLC" access-level="public" access-scope="global" aspect="Aspects.PLC" uuid="85d83706-6ea0-4e09-afd7-eabb5ded6f6e">
-#       <attribute type="unit.System.Attributes.Description" value="КСПА 001 УСО1. 2MOPS1" />
-#       <attribute type="Attributes.GeneralPlan" value="ГП001" />
-#     </ct:object>
+
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from .sensor import Sensor
 
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 class FB_MPS_S(Sensor):
     """
     Класс для работы с датчиками типа FB_MPS_S. Поле Severity отсутствует в таблице, его значение

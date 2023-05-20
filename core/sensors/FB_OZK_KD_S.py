@@ -1,21 +1,7 @@
-# <ct:object name="OZK_KD" access-level="public" access-scope="global" uuid="9157ab67-0479-476b-8412-c058d1c32c4e">
-#     <attribute type="unit.Server.Attributes.NodeRelativePath" />
-#     <attribute type="unit.Server.Attributes.IsObject" value="false" />
-#     <ct:object name="GP001_OK_01" base-type="Types.FB_OZK_KD_S.FB_OZK_KD_S_PLC" access-level="public" access-scope="global" aspect="Aspects.PLC" uuid="42e27951-1915-4a81-8d12-5ba7483d4183">
-#       <attribute type="unit.System.Attributes.Description" value="ГП 1. ОЗК ОК1 системы П1" />
-#       <attribute type="Attributes.IFXX_TP" value="-" />
-#       <attribute type="Attributes.IOFX_TP" value="-" />
-#       <attribute type="Attributes.IONX_TP" value="-" />
-#       <attribute type="Attributes.OXOF_TP" value="-" />
-#       <attribute type="Attributes.OXON_TP" value="-" />
-#       <attribute type="Attributes.GeneralPlan" value="ГП001" />
-#       <attribute type="Attributes.ISOF_TP" value="-" />
-#       <attribute type="Attributes.ISON_TP" value="-" />
-#     </ct:object>
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from .sensor import Sensor
+
 class FB_OZK_KD_S(Sensor):
     """
     Класс для работы с датчиками типа FB_OZK_KD_S. Поле Severity отсутствует в таблице, его значение

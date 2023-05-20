@@ -1,14 +1,7 @@
-# <ct:object name="HA_UPI" access-level="public" access-scope="global" uuid="52f98c31-e644-4d88-9d76-fb8d9170d665">
-#     <ct:object name="UPI" base-type="Types.FB_HA_UPI_S.FB_HA_UPI_S_PLC" access-level="public" access-scope="global" aspect="Aspects.PLC" uuid="6d44e0c5-2760-4fb2-b309-7cb642d790bf">
-#       <attribute type="unit.System.Attributes.Description" value="КСПА.000.УПИ" />
-#       <attribute type="Attributes.GeneralPlan" value="ДИАГ КСПА.000.УПИ" />
-#     </ct:object>
-
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from .sensor import Sensor
 
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 class FB_HA_UPI_S(Sensor):
     """
     Класс для работы с датчиками типа FB_UPI_S. Поле Severity отсутствует в таблице, его значение

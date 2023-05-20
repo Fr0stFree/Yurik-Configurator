@@ -1,11 +1,3 @@
-# <ct:object name="SH_ALL" access-level="public" access-scope="global" uuid="fab5def0-0776-4fb7-a4b4-ccf1d01a17f5">
-#     <attribute type="unit.Server.Attributes.NodeRelativePath" />
-#     <attribute type="unit.Server.Attributes.IsObject" value="false" />
-#     <ct:object name="GP001" base-type="Types.FB_SH_ALL.FB_SH_ALL_PLC" access-level="public" access-scope="global" aspect="Aspects.PLC" uuid="14f9de14-87ec-4b5c-ae83-c192f9b60083">
-#       <attribute type="unit.System.Attributes.Description" value="ГП 1. Здание входных ниток и пробкоуловителей" />
-#       <attribute type="Attributes.GeneralPlan" value="ГП001" />
-#     </ct:object>
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from core.sensors import Sensor
