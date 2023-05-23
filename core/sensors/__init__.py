@@ -15,8 +15,8 @@ from .FB_IMV_S import FB_IMv_S
 from .FB_MPS_S import FB_MPS_S
 from .FB_OZK_KD_S import FB_OZK_KD_S
 from .FB_QSA_ALL_S import FB_QSA_ALL
-from .FB_SH_ALL_S import FB_SH_ALL_S
-from .FB_SHOP_ALL_S import FB_SHOP_ALL_S
+from .FB_SH_ALL import FB_SH_ALL
+from .FB_SHOP_ALL import FB_SHOP_ALL
 from .DI_DIAG import DI_DIAG
 from .PING import PING
 from .SW_S301 import SW_S301
@@ -43,4 +43,8 @@ from .M557O import M557O
 from .M931T import M931T
 from .M931V import M931V
 from .M942A import M942A
+from .M915E import M915E
+from .M903E import M903E
+from .M501E import M501E
+from .M991S import M991S
 
