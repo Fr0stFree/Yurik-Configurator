@@ -8,7 +8,7 @@ class FB_SHOP_S(Sensor):
     Класс для работы с датчиками типа FB_SHOP_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.FB_SHOP_S.FB_SHOP_S_PLC'
+    BASE_TYPE = 'Types.SHOP.SHOP_PLC'
     CLASS_NAME = 'SHOP'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     SirenType = Field(name='SirenType', column='N', validators=[value_is_not_none_or_empty])
