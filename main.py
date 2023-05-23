@@ -94,7 +94,7 @@ class Configurator(GraphicalUserInterface):
         self.stop_process_btn.update(disabled=False)
         failures = 0
         sensors = {}
-        with open(self.omx_file_path, 'w') as omx_file:
+        with open(self.omx_file_path, 'w', encoding='utf-8') as omx_file:
             omx_file.write(settings.OMX_FILE_START_STRING)
             for row in range(min_row, max_row + 1):
                 if not self.is_processing:
