@@ -4,12 +4,12 @@ from .sensor import Sensor
 
 class FB_KL_UPT_S(Sensor):
 
-    BASE_TYPE = 'Types.FB_KL_UPT_S.FB_KL_UPT_S_PLC'
+    BASE_TYPE = 'Types.KL_UPT.KL_UPT_PLC'
     CLASS_NAME = 'UPT'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
-    IvxxTp = Field(name='IVXX_TP', column='Y', validators=[value_is_not_none_or_empty])
+    IvxxTp = Field(name='IVXX_TP', column='Y')
 
 
     def to_omx(self) -> str:
