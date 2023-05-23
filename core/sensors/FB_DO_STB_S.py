@@ -8,7 +8,7 @@ class FB_DO_STB_S(Sensor):
     Класс для работы с датчиками типа FB_DO_STB_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.FB_DO_STB_S.FB_DO_STB_S_PLC'
+    BASE_TYPE = 'Types.DO_STB.DO_STB_PLC'
     CLASS_NAME = 'DO'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     ColorOn = Field(name='ColorOn', column='Q', validators=[value_is_not_none_or_empty])
