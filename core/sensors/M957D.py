@@ -6,11 +6,11 @@ from .sensor import Sensor
 class M957D(Sensor):
 
 
-    BASE_TYPE = 'Types.M957D.M957D_PLC'
+    BASE_TYPE = 'Types.DIAG.M957D.M957D_PLC'
     CLASS_NAME = 'DIAG'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
-    GP = Field(name='GeneralPlan', column='J')
+    GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
 
     def to_omx(self) -> str:
         omx_block = (
