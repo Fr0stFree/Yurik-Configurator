@@ -8,7 +8,7 @@ class FB_AI_S(Sensor):
     Класс для работы с датчиками типа FB_AI_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.FB_AI_S.FB_AI_S_PLC'
+    BASE_TYPE = 'Types.AI.AI_PLC'
     CLASS_NAME = 'AI'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     EUnit = Field(name='EUnit', column='L', validators=[value_is_not_none_or_empty])
