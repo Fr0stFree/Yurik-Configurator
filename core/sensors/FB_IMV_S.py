@@ -1,33 +1,13 @@
-# <ct:object name="IMv" access-level="public" access-scope="global" uuid="32e6c89a-30d9-4f13-8403-87757b3a778d">
-#     <attribute type="unit.Server.Attributes.NodeRelativePath" />
-#     <attribute type="unit.Server.Attributes.IsObject" value="false" />
-#     <ct:object name="GP001_YA_03" base-type="Types.FB_IMv_S.FB_IMv_S_PLC" access-level="public" access-scope="global" aspect="Aspects.PLC" uuid="0e054a95-9401-4993-8554-c63b4a3fcf80">
-#       <attribute type="unit.System.Attributes.Description" value="ГП 1. Распределительное устройство РУА1 3-YA" />
-#       <attribute type="Attributes.IFXX_TP" value="-" />
-#       <attribute type="Attributes.IOFX_TP" value="-" />
-#       <attribute type="Attributes.IONX_TP" value="-" />
-#       <attribute type="Attributes.IRCX_TP" value="-" />
-#       <attribute type="Attributes.OXOF_TP" value="-" />
-#       <attribute type="Attributes.OXON_TP" value="-" />
-#       <attribute type="Attributes.ILCX_TP" value="-" />
-#       <attribute type="Attributes.OXSP_TP" value="-" />
-#       <attribute type="Attributes.GeneralPlan" value="ГП001" />
-#       <attribute type="Attributes.ISOF_TP" value="-" />
-#       <attribute type="Attributes.ISON_TP" value="-" />
-#     </ct:object>
-
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from .sensor import Sensor
-
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!НОВЫЙ ДАТЧИК! ОБЯЗАТЕЛЬНО ВСЁ ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 class FB_IMv_S(Sensor):
     """
     Класс для работы с датчиками типа FB_DO_STB_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.FB_IMv_S.FB_IMv_S_PLC'
+    BASE_TYPE = 'Types.IMv_S.IMv_PLC'
     CLASS_NAME = 'IMv_STB'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
