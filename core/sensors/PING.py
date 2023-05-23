@@ -3,7 +3,7 @@ from core.fields import Field, SeverityField
 from core.sensors import Sensor
 
 class PING(Sensor):
-    BASE_TYPE = 'Types.PING.PING_PLC'
+    BASE_TYPE = 'Types.DIAG.PING.PING_PLC'
     CLASS_NAME = 'PING'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
