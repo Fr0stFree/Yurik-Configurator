@@ -20,8 +20,8 @@ def load_sheet(file_path: str) -> Union[Worksheet, None]:
 
 def save_data(path_from: str, path_to: str) -> None:
     """Функция сохранения текстового файла с omx-объектами по указанному пути."""
-    with open(path_from, 'r') as file_from:
-        with open(path_to, 'w') as file_to:
+    with open(path_from, 'r', encoding='utf-8') as file_from:
+        with open(path_to, 'w', encoding='utf-8') as file_to:
             file_to.write(file_from.read())
 
 
