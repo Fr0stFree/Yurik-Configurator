@@ -6,7 +6,7 @@ class DI_DIAG(Sensor):
 
 
     BASE_TYPE = 'Types.DIAG.DI_DIAG.DI_DIAG_PLC'
-    CLASS_NAME = 'DIAG'
+    CLASS_NAME = 'DI_DIAG'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     MessageOn = Field(name='MessageOn', column='O', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
