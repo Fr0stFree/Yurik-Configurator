@@ -17,7 +17,7 @@ class SW_MES3508(Sensor):
     AbonentPort7 = Field(name='AbonentPort7', column='AF')
     AbonentPort8 = Field(name='AbonentPort8', column='AB')
     AbonentPort9 = Field(name='AbonentPort9', column='AG')
-    AbonentPort10 = Field(name='Abonent_Port10', column='AJ')
+    AbonentPort10 = Field(name='AbonentPort10', column='AJ')
     AbonentPort11 = Field(name='AbonentPort11', column='AI')
     AbonentPort12 = Field(name='AbonentPort12', column='AH')
 
