@@ -8,7 +8,7 @@ class FB_SHPS_S(Sensor):
     Класс для работы с датчиками типа FB_SHPS_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.SHPS.SHPS_PLC'
+    BASE_TYPE = 'Types.FB_SHPS_S.FB_SHPS_S_PLC'
     CLASS_NAME = 'SHPS'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     SensorType = Field(name='SensorType', column='N', validators=[value_is_not_none_or_empty])
@@ -35,3 +35,4 @@ class FB_SHPS_S(Sensor):
             f'    </ct:object>\n'
         )
         return omx_block
+
