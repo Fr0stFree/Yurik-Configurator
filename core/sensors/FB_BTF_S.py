@@ -7,10 +7,10 @@ class FB_BTF_S(Sensor):
     Класс для работы с датчиками типа FB_BTF_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.BTF.BTF_PLC'
+    BASE_TYPE = 'Types.FB_BTF_S.FB_BTF_S_PLC'
     CLASS_NAME = 'BTF'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
-    SensorType = Field(name='Sensor_Type', column='O', validators=[value_is_not_none_or_empty])
+    SensorType = Field(name='SensorType', column='O', validators=[value_is_not_none_or_empty])
     SoundOn = Field(name='SoundOn', column='P', validators=[value_is_not_none_or_empty])
     MessageOn = MessageField(name='MessageOn', column='P', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
