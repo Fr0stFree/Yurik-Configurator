@@ -7,7 +7,7 @@ class FB_SH_ALL(Sensor):
     Класс для работы с датчиками типа FB_SH_ALL. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.SH_ALL.SH_ALL_PLC'
+    BASE_TYPE = 'Types.FB_SH_ALL.FB_SH_ALL_PLC'
     CLASS_NAME = 'SH_ALL'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
