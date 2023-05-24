@@ -7,7 +7,7 @@ class FB_QSA_S(Sensor):
     Класс для работы с датчиками типа FB_QSA_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.QSA.QSA_PLC'
+    BASE_TYPE = 'Types.FB_QSA_S.FB_QSA_S_PLC'
     CLASS_NAME = 'QSA'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     EUnit = Field(name='EUnit', column='L', validators=[value_is_not_none_or_empty])
