@@ -7,7 +7,7 @@ class FB_UPG_S(Sensor):
     """
     Класс для работы с датчиками типа FB_UPG_S.
     """
-    BASE_TYPE = 'Types.UPG.UPG_PLC'
+    BASE_TYPE = 'Types.FB_UPG_S.FB_UPG_S_PLC'
     CLASS_NAME = 'UPG'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
