@@ -8,8 +8,8 @@ class FB_MPS_S(Sensor):
     Класс для работы с датчиками типа FB_MPS_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.MPS.MPS_PLC'
-    CLASS_NAME = 'MPS_STB'
+    BASE_TYPE = 'Types.DIAG.FB_MPS_S.FB_MPS_S_PLC'
+    CLASS_NAME = 'MPS'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
