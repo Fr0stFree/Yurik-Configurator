@@ -3,8 +3,8 @@ from core.fields import Field, SeverityField
 from .sensor import Sensor
 
 class FB_IMp_MON_S(Sensor):
-    BASE_TYPE = 'Types.IMp_MON.IMp_MON_PLC'
-    CLASS_NAME = 'FB_IMp_MON_S'
+    BASE_TYPE = 'Types.FB_IMp_MON_S.FB_IMp_MON_S_PLC'
+    CLASS_NAME = 'IMp_MON'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
     IfxxTp = Field(name='IFXX_TP', column='AD')
