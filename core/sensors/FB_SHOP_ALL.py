@@ -7,8 +7,8 @@ class FB_SHOP_ALL(Sensor):
     Класс для работы с датчиками типа FB_DO_STB_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.SHOP_ALL.SHOP_ALL_PLC'
-    CLASS_NAME = 'FB_SHOP_ALL'
+    BASE_TYPE = 'Types.FB_SHOP_ALL.FB_SHOP_ALL_PLC'
+    CLASS_NAME = 'SHOP_ALL'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
