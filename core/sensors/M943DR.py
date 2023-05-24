@@ -7,7 +7,7 @@ class M943DR(Sensor):
 
 
     BASE_TYPE = 'Types.DIAG.M943DR.M943DR_PLC'
-    CLASS_NAME = 'DIAG'
+    CLASS_NAME = 'M943DR'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
