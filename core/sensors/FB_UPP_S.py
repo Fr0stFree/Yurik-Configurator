@@ -7,7 +7,7 @@ class FB_UPP_S(Sensor):
     """
     Класс для работы с датчиками типа FB_UPP_S.
     """
-    BASE_TYPE = 'Types.UPP_S.UPP_PLC'
+    BASE_TYPE = 'Types.FB_UPP_S.FB_UPP_S_PLC'
     CLASS_NAME = 'UPP'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     GP = Field(name='GeneralPlan', column='J', validators=[value_is_not_none_or_empty])
