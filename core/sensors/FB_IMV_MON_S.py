@@ -7,8 +7,8 @@ class FB_IMv_MON_S(Sensor):
     Класс для работы с датчиками типа FB_IMv_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.IMv_MON.IMv_MON_PLC'
-    CLASS_NAME = 'FB_IMv_MON_S'
+    BASE_TYPE = 'Types.FB_IMv_MON_S.FB_IMv_MON_S_PLC'
+    CLASS_NAME = 'IMv_MON'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
     IfxxTp = Field(name='IFXX_TP', column='AD')
