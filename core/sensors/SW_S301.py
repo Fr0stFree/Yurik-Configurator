@@ -17,9 +17,8 @@ class SW_S301(Sensor):
     AbonentPort7 = Field(name='AbonentPort7', column='AF')
     AbonentPort8 = Field(name='AbonentPort8', column='AB')
     AbonentPort9 = Field(name='AbonentPort9', column='AG')
-    AbonentPort10 = Field(name='Abonent_Port10', column='AJ')
-    AbonentPort11 = Field(name='AbonentPort11', column='AI')
-    AbonentPort12 = Field(name='AbonentPort12', column='AH')
+    AbonentPort10 = Field(name='AbonentPort10', column='AJ')
+
 
     def to_omx(self) -> str:
         omx_block = (
@@ -36,8 +35,6 @@ class SW_S301(Sensor):
             f'      <attribute type="Attributes.{self.GP.name}" value="{getattr(self, self.GP.key)}"/>\n'
             f'      <attribute type="Attributes.{self.AbonentPort9.name}" value="{getattr(self, self.AbonentPort9.key)}"/>\n'
             f'      <attribute type="Attributes.{self.AbonentPort10.name}" value="{getattr(self, self.AbonentPort10.key)}"/>\n'
-            f'      <attribute type="Attributes.{self.AbonentPort11.name}" value="{getattr(self, self.AbonentPort11.key)}"/>\n'
-            f'      <attribute type="Attributes.{self.AbonentPort12.name}" value="{getattr(self, self.AbonentPort12.key)}"/>\n'
             f'    </ct:object>\n'
         )
         return omx_block
