@@ -6,8 +6,8 @@ class FB_OZK_KD_S(Sensor):
     Класс для работы с датчиками типа FB_OZK_KD_S. Поле Severity отсутствует в таблице, его значение
     рассчитывается на основе значения в поле SOUND_ON.
     """
-    BASE_TYPE = 'Types.OZK_KD.OZK_KD_PLC'
-    CLASS_NAME = 'FB_OZK_KD_S'
+    BASE_TYPE = 'Types.FB_OZK_KD_S.FB_OZK_KD_S_PLC'
+    CLASS_NAME = 'OZK_KD'
     Name = Field(name='name', column='D', validators=[value_is_not_none_or_empty])
     Description = Field(name='Description', column='E', validators=[value_is_not_none_or_empty])
     IfxxTp = Field(name='IFXX_TP', column='AD')
