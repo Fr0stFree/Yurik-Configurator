@@ -1,5 +1,6 @@
 import uuid
 from typing import Type
+from datetime import datetime
 
 from openpyxl.worksheet.worksheet import Worksheet
 
@@ -43,11 +44,12 @@ class Sensor:
     BASE_TYPE: str
 
     def __init__(self, **kwargs) -> None:
-        self.pk = uuid.uuid5(uuid.NAMESPACE_DNS, kwargs.get('name'))
+        self.pk = uuid.uuid5(uuid.NAMESPACE_DNS, kwargs.get('name')+str(datetime.now()))
         self.row = kwargs.get('row')
         for field in self.__class__.__dict__.values():
             if isinstance(field, Field):
                 setattr(self, field.key, kwargs.get(field.key, None))
+                kwargs.get(field.key, None)
     
     def __str__(self):
         return f'<{getattr(self, self.Name.key)} {getattr(self, self.GP.key)}>'
@@ -73,7 +75,7 @@ class Sensor:
         Метод для группировки датчиков по типу. На вход получает список объектов датчиков,
         возвращает строку
         """
-        group_pk = uuid.uuid5(uuid.NAMESPACE_DNS, cls.CLASS_NAME)
+        group_pk = uuid.uuid5(uuid.NAMESPACE_DNS, cls.CLASS_NAME+str(datetime.now()))
         start_string = (
             f'  <ct:object name="{cls.CLASS_NAME}" access-level="public" uuid="{group_pk}">\n'
             '    <attribute type="unit.Server.Attributes.NodeRelativePath" />\n'
