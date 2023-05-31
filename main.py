@@ -8,10 +8,9 @@ from openpyxl.worksheet.worksheet import Worksheet
 from pydispatch import dispatcher
 
 from core.gui import GraphicalUserInterface
-from core.utils import match_extension, save_data, load_sheet, get_calculation_limits, convert_to_file_path
+from core.utils import ProcessTypes, match_extension, save_data, load_sheet, get_calculation_limits, convert_to_file_path
 from core.sensors import Sensor
 from core.exceptions import ValidationError, InvalidValueError
-from core.settings import ProcessTypes
 from core import signals
 from core import settings
 
@@ -36,8 +35,7 @@ class Configurator(GraphicalUserInterface):
         self.file = sender
         self.is_processing = True
         super().handle_start_processing(sender, **kwargs)
-        type = self.process_type_dropdown.get()
-        process_type = ProcessTypes(type)
+        process_type = ProcessTypes(self.process_type_dropdown.get())
         self.file.write(process_type.start_string)
 
     def handle_sensor_processing(self, sender: Sensor, **kwargs) -> None:
@@ -108,8 +106,7 @@ class Configurator(GraphicalUserInterface):
                 if not file_path:
                     continue
 
-                file_path = convert_to_file_path(file_path,
-                                                 extension=match_extension(self.process_type_dropdown.get()))
+                file_path = convert_to_file_path(file_path, extension=match_extension(process_type))
                 save_data(self.buffer, file_path)
                 dispatcher.send(signals.DATA_SAVED, file_path=file_path)
 
@@ -117,10 +114,6 @@ class Configurator(GraphicalUserInterface):
             elif event == self.stop_process_btn.key:
                 dispatcher.send(signals.STOP_PROCESSING,
                                 reason='Обработка прервана пользователем.')
-
-            # TODO: Подключить
-            elif event == self.hmi_process_btn.key:
-                self.is_processing = False
 
             # Получение минимального и максимального номеров строк
             elif event in (self.min_row_input.key, self.max_row_input.key):

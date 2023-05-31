@@ -1,12 +1,66 @@
 from pathlib import Path
 from typing import Optional
+from enum import Enum
 
 import openpyxl
 from openpyxl.worksheet.worksheet import Worksheet
 
 from core.exceptions import InvalidValueError
-from core.settings import ProcessTypes
 from core.validators import value_is_digit_or_none
+
+
+class ProcessTypes(Enum):
+    OMX = 'to OMX'
+    HMI = 'to HMI'
+
+    @property
+    def start_string(self) -> str:
+        options = {
+            ProcessTypes.OMX: '<omx xmlns="system" xmlns:ct="automation.control">\n',
+            ProcessTypes.HMI: '<type access-modifier="private" name="ParcerHMI" display-name="ParcerHMI" uuid="9a110b5c-0c05-4f31-b7ec-58eb4abcc96e" base-type="Form" base-type-id="ffaf5544-6200-45f4-87ec-9dd24558a9d5" ver="4">\n'
+                              '    <designed target="X" value="0" ver="4"/>\n'
+                              '    <designed target="Y" value="0" ver="4"/>\n'
+                              '    <designed target="ZValue" value="0" ver="4"/>\n'
+                              '    <designed target="Rotation" value="0" ver="4"/>\n'
+                              '    <designed target="Scale" value="1" ver="4"/>\n'
+                              '    <designed target="Visible" value="true" ver="4"/>\n'
+                              '    <designed target="Opacity" value="1" ver="4"/>\n'
+                              '    <designed target="Enabled" value="true" ver="4"/>\n'
+                              '    <designed target="Tooltip" value="" ver="4"/>\n'
+                              '    <designed target="Width" value="3000" ver="4"/>\n'
+                              '    <designed target="Height" value="3000" ver="4"/>\n'
+                              '    <designed target="PenColor" value="0xff000000" ver="4"/>\n'
+                              '    <designed target="PenStyle" value="0" ver="4"/>\n'
+                              '    <designed target="PenWidth" value="1" ver="4"/>\n'
+                              '    <designed target="BrushColor" value="0xffc0c0c0" ver="4"/>\n'
+                              '    <designed target="BrushStyle" value="1" ver="4"/>\n'
+                              '    <designed target="WindowX" value="0" ver="4"/>\n'
+                              '    <designed target="WindowY" value="0" ver="4"/>\n'
+                              '    <designed target="WindowWidth" value="1920" ver="4"/>\n'
+                              '    <designed target="WindowHeight" value="1080" ver="4"/>\n'
+                              '    <designed target="WindowCaption" value="" ver="4"/>\n'
+                              '    <designed target="ShowWindowCaption" value="true" ver="4"/>\n'
+                              '    <designed target="ShowWindowMinimize" value="true" ver="4"/>\n'
+                              '    <designed target="ShowWindowMaximize" value="true" ver="4"/>\n'
+                              '    <designed target="ShowWindowClose" value="true" ver="4"/>\n'
+                              '    <designed target="AlwaysOnTop" value="false" ver="4"/>\n'
+                              '    <designed target="WindowSizeMode" value="0" ver="4"/>\n'
+                              '    <designed target="WindowBorderStyle" value="1" ver="4"/>\n'
+                              '    <designed target="WindowState" value="0" ver="4"/>\n'
+                              '    <designed target="WindowScalingMode" value="0" ver="4"/>\n'
+                              '    <designed target="MonitorNumber" value="0" ver="4"/>\n'
+                              '    <designed target="WindowPosition" value="0" ver="4"/>\n'
+                              '    <designed target="WindowCloseMode" value="0" ver="4"/>\n',
+        }
+        return options[self]
+
+    @property
+    def end_string(self) -> str:
+        options = {
+            ProcessTypes.OMX: '</omx>',
+            ProcessTypes.HMI: '</type>',
+        }
+        return options[self]
 
 
 def load_sheet(file_path: Path) -> Optional[Worksheet]:
@@ -26,6 +80,7 @@ def save_data(path_from: Path, path_to: Path) -> None:
         with open(path_to, 'w', encoding='utf-8') as file_to:
             file_to.write(file_from.read())
     path_from.unlink()
+
 
 def convert_to_file_path(path: str, extension: str = None) -> Path:
     file_path = Path(path)
@@ -66,10 +121,10 @@ def to_snake_case(string: str) -> str:
     return ''.join([s.lower() if s.islower() else f'_{s.lower()}' for s in string])
 
 
-def match_extension(process_type: str) -> str:
+def match_extension(process_type: ProcessTypes) -> str:
     """Функция соответствия расширения файла типу обработки."""
     extensions = {
-        ProcessTypes.OMX.value: '.omx-export',
-        ProcessTypes.HMI.value: '.omobj',
+        ProcessTypes.OMX: '.omx-export',
+        ProcessTypes.HMI: '.omobj',
     }
     return extensions[process_type]
