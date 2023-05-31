@@ -81,6 +81,7 @@ class GraphicalUserInterface:
         self.stop_process_btn.update(disabled=True)
         self.save_data_btn.update(disabled=True)
         self.file_path_bar.update(file_path)
+        self.progress_bar.update(0)
         self.event_box.print(f'Данные из файла {file_path.name} успешно загружены.',
                              text_color='green')
 
@@ -90,8 +91,8 @@ class GraphicalUserInterface:
         self.process_type_dropdown.update(disabled=True)
         self.stop_process_btn.update(disabled=False)
         self.save_data_btn.update(disabled=True)
-        self.min_row_input.update(disabled=True)
-        self.max_row_input.update(disabled=True)
+        self.min_row_input.update(value=str(min_row), disabled=True)
+        self.max_row_input.update(value=str(max_row), disabled=True)
         self.progress_bar.update(0, max=max_row - min_row)
         self.event_box.print(f'Начинаю обработку данных с {min_row} по {max_row} строку...',
                              text_color='blue')

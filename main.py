@@ -23,7 +23,7 @@ class Configurator(GraphicalUserInterface):
         self.sheet: Optional[Worksheet] = None
         self.buffer: Path = Path(__file__).parent / 'buffer.txt'
         self.file = None
-        self.is_processing: bool = True
+        self.is_processing: bool = False
         self.error_counter: int = 0
         self.sensors: Dict[str, List[Sensor]] = {}
         self.init_signals()
