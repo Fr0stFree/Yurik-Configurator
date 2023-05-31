@@ -35,7 +35,7 @@ class GraphicalUserInterface:
                                        reroute_stdout=True, autoscroll=True, no_scrollbar=True,
                                        expand_x=True, expand_y=True)
         self.process_type_dropdown = GUI.DropDown(key='-PROCESS_TYPE-', values=[type.value for type in ProcessTypes],
-                                                  default_value=settings.ProcessTypes.OMX.value,
+                                                  default_value=settings.ProcessTypes.OMX.value, enable_events=True,
                                                   size=settings.BUTTON_SIZE, disabled=True, readonly=True)
         self.process_data_btn = GUI.Button(button_text='Обработать', key='-PROCESS_DATA-',
                                            size=settings.BUTTON_SIZE, disabled=True)
