@@ -6,6 +6,7 @@ import PySimpleGUI as GUI
 from pydispatch import dispatcher
 
 from . import settings
+from .settings import ProcessTypes
 from . import signals
 from .exceptions import InvalidValueError, ValidationError
 from .sensors import Sensor
@@ -34,6 +35,9 @@ class GraphicalUserInterface:
         self.event_box = GUI.Multiline(key='-OUTPUT-', disabled=True, size=settings.EVENT_BOX_SIZE,
                                        reroute_stdout=True, autoscroll=True, no_scrollbar=True,
                                        expand_x=True, expand_y=True)
+        self.process_type_dropdown = GUI.DropDown(key='-PROCESS_TYPE-', values=[type.value for type in ProcessTypes],
+                                                  default_value=settings.ProcessTypes.OMX.value,
+                                                  size=settings.BUTTON_SIZE, disabled=True)
         self.process_data_btn = GUI.Button(button_text='Обработать', key='-PROCESS_DATA-',
                                            size=settings.BUTTON_SIZE, disabled=True)
         self.stop_process_btn = GUI.Button(button_text='Стоп', key='-STOP_PROCESS-',
@@ -55,7 +59,7 @@ class GraphicalUserInterface:
              self.error_counter_bar, GUI.Push()],
             [self.event_box],
             [self.progress_bar],
-            [self.process_data_btn, self.stop_process_btn, GUI.Push(), self.save_data_btn, self.hmi_process_btn],
+            [self.process_type_dropdown, self.process_data_btn, self.stop_process_btn, GUI.Push(), self.save_data_btn, self.hmi_process_btn],
         ]
         self.window = GUI.Window(title=settings.WINDOW_TITLE, layout=layout,
                                  size=settings.WINDOW_SIZE)
@@ -76,6 +80,7 @@ class GraphicalUserInterface:
     def handle_data_loaded(self, sender: Any, file_path: Path) -> None:
         self.load_data_btn.update(disabled=False)
         self.process_data_btn.update(disabled=False)
+        self.process_type_dropdown.update(disabled=False)
         self.stop_process_btn.update(disabled=True)
         self.save_data_btn.update(disabled=True)
         self.file_path_bar.update(file_path)
@@ -85,6 +90,7 @@ class GraphicalUserInterface:
     def handle_start_processing(self, sender: Any, min_row: int, max_row: int, **kwargs) -> None:
         self.load_data_btn.update(disabled=True)
         self.process_data_btn.update(disabled=True)
+        self.process_type_dropdown.update(disabled=True)
         self.stop_process_btn.update(disabled=False)
         self.save_data_btn.update(disabled=True)
         self.min_row_input.update(value=str(min_row), disabled=True)

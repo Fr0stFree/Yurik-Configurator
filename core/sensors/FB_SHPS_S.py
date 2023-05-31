@@ -1,6 +1,7 @@
 from core.validators import value_is_not_none_or_empty
 from core.fields import Field, SeverityField
 from .sensor import Sensor
+from ..settings import ProcessTypes
 
 
 class FB_SHPS_S(Sensor):
@@ -36,3 +37,31 @@ class FB_SHPS_S(Sensor):
         )
         return omx_block
 
+    def to_hmi(self) -> str:
+        hmi_block = (
+            f'    <object access-modifier="private" name="{getattr(self, self.Name.key)}" display-name="{getattr(self, self.Name.key)}" uuid="{self.pk}" base-type="{self.BASE_TYPE}" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">\n'
+            f'        <designed target="X" value="-138.75" ver="5"/>\n'
+            f'        <designed target="Y" value="81" ver="5"/>\n'
+            f'        <designed target="Rotation" value="0" ver="5"/>\n'
+            f'        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>\n'
+            f'        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>\n'
+            f'    </object>\n'
+            f'    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="{self.pk}" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">\n'
+            f'        <designed target="X" value="9.16665" ver="4"/>\n'
+            f'        <designed target="Y" value="43" ver="4"/>\n'
+            f'        <designed target="ZValue" value="0" ver="4"/>\n'
+            f'        <designed target="Rotation" value="0" ver="4"/>\n'
+            f'        <designed target="Scale" value="1" ver="4"/>\n'
+            f'        <designed target="Visible" value="true" ver="4"/>\n'
+            f'        <designed target="Opacity" value="1" ver="4"/>\n'
+            f'        <designed target="Enabled" value="true" ver="4"/>\n'
+            f'        <designed target="Tooltip" value="" ver="4"/>\n'
+            f'        <designed target="Width" value="45.6667" ver="4"/>\n'
+            f'        <designed target="Height" value="13.7143" ver="4"/>\n'
+            f'        <designed target="Text" value="3BTH2" ver="4"/>\n'
+            f'        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>\n'
+            f'        <designed target="FontColor" value="0xff000000" ver="4"/>\n'
+            f'        <designed target="TextAlignment" value="132" ver="4"/>\n'
+            f'    </object>\n'
+        )
+        return hmi_block

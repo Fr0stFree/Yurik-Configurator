@@ -5,6 +5,7 @@ import openpyxl
 from openpyxl.worksheet.worksheet import Worksheet
 
 from core.exceptions import InvalidValueError
+from core.settings import ProcessTypes
 from core.validators import value_is_digit_or_none
 
 
@@ -63,3 +64,12 @@ def get_calculation_limits(sheet: Worksheet,
 def to_snake_case(string: str) -> str:
     """Функция преобразования строки в snake_case."""
     return ''.join([s.lower() if s.islower() else f'_{s.lower()}' for s in string])
+
+
+def match_extension(process_type: str) -> str:
+    """Функция соответствия расширения файла типу обработки."""
+    extensions = {
+        ProcessTypes.OMX.value: '.omx-export',
+        ProcessTypes.HMI.value: '.omobj',
+    }
+    return extensions[process_type]

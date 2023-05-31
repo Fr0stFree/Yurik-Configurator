@@ -5,6 +5,7 @@ from datetime import datetime
 from openpyxl.worksheet.worksheet import Worksheet
 
 from core import settings
+from core.settings import ProcessTypes
 from core.exceptions import UnknownSensorTypeError
 from core.fields import Field
 
@@ -69,25 +70,33 @@ class Sensor:
         return sensor_type._parse_row(sheet, row)
 
     @classmethod
-    def clusterize(cls, sensors: list['Sensor']) -> str:
+    def clusterize(cls, sensors: list['Sensor'], process_type: ProcessTypes) -> str:
         """
         Метод для группировки датчиков по типу. На вход получает список объектов датчиков,
         возвращает строку
         """
-        group_pk = uuid.uuid5(uuid.NAMESPACE_DNS, cls.CLASS_NAME+str(datetime.now()))
-        start_string = (
-            f'  <ct:object name="{cls.CLASS_NAME}" access-level="public" uuid="{group_pk}">\n'
-            '    <attribute type="unit.Server.Attributes.NodeRelativePath" />\n'
-            '    <attribute type="unit.Server.Attributes.IsObject" value="false" />\n'
-        )
-        end_string = '  </ct:object>\n'
-        return start_string + ''.join([sensor.to_omx() for sensor in sensors]) + end_string
+        group_pk = uuid.uuid5(uuid.NAMESPACE_DNS, cls.CLASS_NAME + str(datetime.now()))
+        start_string = {
+            ProcessTypes.OMX: (
+                f'  <ct:object name="{cls.CLASS_NAME}" access-level="public" uuid="{group_pk}">\n'
+                 '    <attribute type="unit.Server.Attributes.NodeRelativePath" />\n'
+                 '    <attribute type="unit.Server.Attributes.IsObject" value="false" />\n'
+            ),
+            ProcessTypes.HMI: '',
+        }
+        end_string = {
+            ProcessTypes.OMX: '  </ct:object>\n',
+            ProcessTypes.HMI: '',
+        }
+        return (start_string[process_type]
+                + ''.join([sensor.to_block(process_type) for sensor in sensors])
+                + end_string[process_type])
 
     @classmethod
     def _parse_row(cls, sheet: Worksheet, row: int):
         """
         Функция получения значений ячеек из строки. Так же функция применяет валидаторы к
-        значениям и в случае валидности всех значений возвращает экземпляр класса датчика.
+        значениям, и в случае их валидности, возвращает экземпляр класса датчика.
         """
         kwargs = {'row': row}
         for field in cls.__dict__.values():
@@ -106,6 +115,17 @@ class Sensor:
                                      f"написания имени датчика и проверьте, что он импортирован "
                                      f"в файле __init__.py")
 
+    def to_block(self, process_type: ProcessTypes) -> str:
+        result = {
+            ProcessTypes.OMX: self.to_omx,
+            ProcessTypes.HMI: self.to_hmi,
+        }
+        return result[process_type]()
+
     def to_omx(self):
         """Метод для сериализации датчика в формат OMX. Реализован в каждом датчике отдельно"""
         raise NotImplementedError('Метод to_omx должен быть реализован для дочерних классов')
+
+    def to_hmi(self):
+        """Метод для сериализации датчика в формат HMI. Реализован в каждом датчике отдельно"""
+        raise NotImplementedError('Метод to_hmi должен быть реализован для дочерних классов')

@@ -8,9 +8,10 @@ from openpyxl.worksheet.worksheet import Worksheet
 from pydispatch import dispatcher
 
 from core.gui import GraphicalUserInterface
-from core.utils import save_data, load_sheet, get_calculation_limits, convert_to_file_path
+from core.utils import match_extension, save_data, load_sheet, get_calculation_limits, convert_to_file_path
 from core.sensors import Sensor
 from core.exceptions import ValidationError, InvalidValueError
+from core.settings import ProcessTypes
 from core import signals
 from core import settings
 
@@ -35,7 +36,9 @@ class Configurator(GraphicalUserInterface):
         self.file = sender
         self.is_processing = True
         super().handle_start_processing(sender, **kwargs)
-        self.file.write(settings.OMX_FILE_START_STRING)
+        type = self.process_type_dropdown.get()
+        process_type = ProcessTypes(type)
+        self.file.write(process_type.start_string)
 
     def handle_sensor_processing(self, sender: Sensor, **kwargs) -> None:
         self.error_counter = 0
@@ -45,14 +48,16 @@ class Configurator(GraphicalUserInterface):
     def handle_stop_processing(self, sender: Any, **kwargs) -> None:
         self.is_processing = False
         super().handle_stop_processing(sender, **kwargs)
+        process_type = ProcessTypes(self.process_type_dropdown.get())
 
         for sensor_type, sensor_list in self.sensors.items():
             sensor_class = sensor_list[0].__class__
-            cluster = sensor_class.clusterize(sensor_list)
+            cluster = sensor_class.clusterize(sensor_list, process_type)
             self.file.write(cluster)
 
-        self.file.write(settings.OMX_FILE_END_STRING)
+        self.file.write(process_type.end_string)
         self.file.close()
+        self.sensors.clear()
         self.file = None
 
     def handle_validation_failure(self, sender: Exception, **kwargs) -> None:
@@ -95,14 +100,16 @@ class Configurator(GraphicalUserInterface):
 
             # Сохранение данных
             elif event == self.save_data_btn.key:
+                process_type = ProcessTypes(self.process_type_dropdown.get())
                 file_path = GUI.popup_get_file(message='Сохранить данные',
                                                save_as=True,
-                                               file_types=settings.SUPPORTED_SAVE_FILE_TYPES,
+                                               file_types=settings.SUPPORTED_SAVE_FILE_TYPES[process_type],
                                                no_window=True)
                 if not file_path:
                     continue
 
-                file_path = convert_to_file_path(file_path, extension='.omx-export')
+                file_path = convert_to_file_path(file_path,
+                                                 extension=match_extension(self.process_type_dropdown.get()))
                 save_data(self.buffer, file_path)
                 dispatcher.send(signals.DATA_SAVED, file_path=file_path)
 
@@ -153,7 +160,7 @@ class Configurator(GraphicalUserInterface):
 
                 try:
                     sensor = Sensor.create(self.sheet, row)
-                    dispatcher.send(signals.SENSOR_DETECTED, sender=sensor, row=row)
+                    dispatcher.send(signals.SENSOR_DETECTED, sensor, row=row)
 
                 except ValidationError as exc:
                     dispatcher.send(signals.VALIDATION_FAILED, exc, row=row)
