@@ -99,11 +99,11 @@ class GraphicalUserInterface:
 
     def handle_sensor_processing(self, sender: Sensor, error_counter: int, row: int, **kwargs) -> None:
         self.error_counter_bar.update(error_counter)
-        self.progress_bar.update(current_count=row - int(self.min_row_input.get()))
+        self.progress_bar.update(row - int(self.min_row_input.get()))
         self.event_box.print(f'В строке {row} опознан {sender}')
 
     def handle_skip_flag_processing(self, sender: Any, row: int, **kwargs) -> None:
-        self.progress_bar.update(row)
+        self.progress_bar.update(row - int(self.min_row_input.get()))
         self.event_box.print(f'В строке {row} опознан флаг пропуска ...пропускаю.',
                              text_color='orange')
 
@@ -132,7 +132,7 @@ class GraphicalUserInterface:
 
     def handle_validation_failure(self, sender: Exception, error_counter: int, row: int, **kwargs) -> None:
         self.error_counter_bar.update(error_counter)
-        self.progress_bar.update(row)
+        self.progress_bar.update(row - int(self.min_row_input.get()))
         self.event_box.print(f'Ошибка в строке {row}: {str(sender)}\n',
                              text_color='red')
 
