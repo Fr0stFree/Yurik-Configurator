@@ -50,10 +50,10 @@ class Sensor:
             if isinstance(field, Field):
                 setattr(self, field.key, kwargs.get(field.key, None))
                 kwargs.get(field.key, None)
-    
+
     def __str__(self):
         return f'<{getattr(self, self.Name.key)} {getattr(self, self.GP.key)}>'
-    
+
     def __repr__(self):
         return f'<{getattr(self, self.Name.key)}>'
 
@@ -68,9 +68,8 @@ class Sensor:
         sensor_type = cls._recognize_signature(sensor_name)
         return sensor_type._parse_row(sheet, row)
 
-    
     @classmethod
-    def clusterize(cls, sensors: list[Type['Sensor']]) -> str:
+    def clusterize(cls, sensors: list['Sensor']) -> str:
         """
         Метод для группировки датчиков по типу. На вход получает список объектов датчиков,
         возвращает строку

@@ -1,15 +1,17 @@
-import sys
-from typing import Optional
+from pathlib import Path
+from typing import Optional, Any, Dict, List, TextIO
 from threading import Thread
-import os
+
 
 import PySimpleGUI as GUI
 from openpyxl.worksheet.worksheet import Worksheet
+from pydispatch import dispatcher
 
 from core.gui import GraphicalUserInterface
-from core.utils import save_data, load_sheet, get_calculation_limits, get_progress
+from core.utils import save_data, load_sheet, get_calculation_limits, convert_to_file_path
 from core.sensors import Sensor
 from core.exceptions import ValidationError, InvalidValueError
+from core import signals
 from core import settings
 
 
@@ -19,10 +21,46 @@ class Configurator(GraphicalUserInterface):
         self.min_row: Optional[int] = None
         self.max_row: Optional[int] = None
         self.sheet: Optional[Worksheet] = None
-        self.omx_file_path = os.path.join(os.getcwd(), 'buffer.txt')
+        self.buffer: Path = Path(__file__).parent / 'buffer.txt'
+        self.file = None
         self.is_processing: bool = True
-        self.error_counter = 0
+        self.error_counter: int = 0
+        self.sensors: Dict[str, List[Sensor]] = {}
+        self.init_signals()
 
+    def init_signals(self):
+        super().init_signals()
+
+    def handle_start_processing(self, sender: TextIO, **kwargs) -> None:
+        self.file = sender
+        self.is_processing = True
+        super().handle_start_processing(sender, **kwargs)
+        self.file.write(settings.OMX_FILE_START_STRING)
+
+    def handle_sensor_processing(self, sender: Sensor, **kwargs) -> None:
+        self.error_counter = 0
+        self.sensors.setdefault(sender.__class__.__name__, []).append(sender)
+        super().handle_sensor_processing(sender, self.error_counter, **kwargs)
+
+    def handle_stop_processing(self, sender: Any, **kwargs) -> None:
+        self.is_processing = False
+        super().handle_stop_processing(sender, **kwargs)
+
+        for sensor_type, sensor_list in self.sensors.items():
+            sensor_class = sensor_list[0].__class__
+            cluster = sensor_class.clusterize(sensor_list)
+            self.file.write(cluster)
+
+        self.file.write(settings.OMX_FILE_END_STRING)
+        self.file.close()
+        self.file = None
+
+    def handle_validation_failure(self, sender: Exception, **kwargs) -> None:
+        self.error_counter += 1
+        super().handle_validation_failure(sender, self.error_counter, **kwargs)
+        if self.error_counter >= settings.MAX_FAILURES_PER_RUN:
+            dispatcher.send(signals.STOP_PROCESSING,
+                            reason=f'превышено максимальное количество ошибок ({settings.MAX_FAILURES_PER_RUN}).')
 
     def run(self):
         while True:
@@ -30,60 +68,65 @@ class Configurator(GraphicalUserInterface):
 
             # Загрузка данных
             if event == self.load_data_btn.key:
-                path = GUI.popup_get_file('Load data', file_types=(('Excel files', '*.xlsm'),))
-                pathN = path.replace('\n', '')
-                self.window['-FILE_NAME_OUTPUT-'].print(pathN)
-                if path:
-                    self.sheet = load_sheet(file_path=path)
-                    if self.sheet:
-                        self.window[self.process_data_btn.key].update(disabled=False)
-                        self.is_processing = True
-                        print(f'Данные из "{self.sheet.title}" успешно загружены.')
-                    else:
-                        print('Ошибка загрузки таблицы.')
+                file_path = GUI.popup_get_file(message='Загрузить данные',
+                                               file_types=settings.SUPPORTED_LOAD_FILE_TYPES,
+                                               no_window=True)
+                if not file_path:
+                    continue
+
+                file_path = convert_to_file_path(file_path)
+                self.sheet = load_sheet(file_path)
+                if not self.sheet:
+                    dispatcher.send(signals.DATA_LOADING_FAILED, file_path=file_path)
+                    continue
+
+                dispatcher.send(signals.DATA_LOADED, file_path=file_path)
 
             # Обработка данных
             elif event == self.process_data_btn.key:
                 try:
                     min_row, max_row = get_calculation_limits(self.sheet, self.min_row, self.max_row)
+
                 except InvalidValueError as exc:
-                    print('Ошибка в полях диапазона расчёта:', exc)
+                    dispatcher.send(signals.INVALID_INPUT_VALUE, exc)
                     continue
+
                 Thread(target=self.process_data, args=(min_row, max_row)).start()
 
             # Сохранение данных
             elif event == self.save_data_btn.key:
-                path = GUI.popup_get_file(message='Сохранить данные',
-                                          save_as=True,
-                                          file_types=(('OMX files', '*.omx-export'),))
-                if path:
-                    if not path.endswith('.omx-export'):
-                        path += '.omx-export'
-                    save_data(self.omx_file_path, path)
-                    print(f'Файл "{path}" успешно сохранён.')
+                file_path = GUI.popup_get_file(message='Сохранить данные',
+                                               save_as=True,
+                                               file_types=settings.SUPPORTED_SAVE_FILE_TYPES,
+                                               no_window=True)
+                if not file_path:
+                    continue
+
+                file_path = convert_to_file_path(file_path, extension='.omx-export')
+                save_data(self.buffer, file_path)
+                dispatcher.send(signals.DATA_SAVED, file_path=file_path)
 
             # Остановка обработки данных
             elif event == self.stop_process_btn.key:
-                self.is_processing = False
-            # HMI
+                dispatcher.send(signals.STOP_PROCESSING,
+                                reason='Обработка прервана пользователем.')
+
+            # TODO: Подключить
             elif event == self.hmi_process_btn.key:
                 self.is_processing = False
 
-
             # Получение минимального и максимального номеров строк
-            elif event == self.min_row_input.key:
+            elif event in (self.min_row_input.key, self.max_row_input.key):
                 self.min_row = values[self.min_row_input.key]
-
-            elif event == self.max_row_input.key:
                 self.max_row = values[self.max_row_input.key]
 
             # Побочное
             elif event == 'Об авторе':
-                GUI.popup('Автор', settings.ABOUT_POPUP_TEXT)
+                GUI.popup(event, settings.ABOUT_POPUP_TEXT)
 
-            # Побочное
-            elif event == 'Клик':
-                GUI.popup('Инструкция', settings.INSTRUCTION_POPUP_TEXT)
+            elif event == 'Инструкция':
+                GUI.popup(event, settings.INSTRUCTION_POPUP_TEXT)
+
             elif event == GUI.WIN_CLOSED:
                 break
 
@@ -91,49 +134,32 @@ class Configurator(GraphicalUserInterface):
 
     # Внутренний метод для обработки данных
     def process_data(self, min_row: int, max_row: int):
-        self.stop_process_btn.update(disabled=False)
-        failures = 0
-        sensors = {}
-        with open(self.omx_file_path, 'w', encoding='utf-8') as omx_file:
-            omx_file.write(settings.OMX_FILE_START_STRING)
+        with open(self.buffer, 'w', encoding='utf-8') as omx_file:
+            dispatcher.send(signals.START_PROCESSING, omx_file, min_row=min_row, max_row=max_row)
+
             for row in range(min_row, max_row + 1):
                 if not self.is_processing:
                     break
+
                 skip_flag = self.sheet[f'{settings.SKIP_FLAG_COLUMN}{row}'].value
-                if not self.is_processing or skip_flag not in (0, 1):
-                    print('Ваша остановочка, господа.')
+                if skip_flag not in (0, 1):
+                    dispatcher.send(signals.STOP_PROCESSING,
+                                    reason=f'Неверное значение флага пропуска на строке {row}.')
                     break
-                if not skip_flag:
-                    print(f'В строке {row} опознан флаг пропуска ...пропускаю.')
+
+                if skip_flag == 0:
+                    dispatcher.send(signals.SKIP_FLAG_DETECTED, row=row)
                     continue
+
                 try:
                     sensor = Sensor.create(self.sheet, row)
-                    print(f'В строке {row} опознан {sensor}', end=' ')
+                    dispatcher.send(signals.SENSOR_DETECTED, sender=sensor, row=row)
+
                 except ValidationError as exc:
-                    self.error_counter += 1
-                    self.window['-OUTPUT-'].print(f'Ошибка в строке {row}: {exc}', text_color='red')
-                    failures += 1
-                    if failures >= settings.MAX_FAILURES_PER_RUN:
-                        print('Хуета какая-то, проверь данные в таблице, они нихуя не валидны.')
-                        break
-                else:
-                    failures = 0
-                    sensors.setdefault(sensor.__class__.__name__, []).append(sensor)
-                    print(f'   ...обработано')
-                finally:
-                    self.progress_bar.update_bar(get_progress(row, min_row, max_row))
-            for sensor_type, sensor_list in sensors.items():
-                sensor_class = sensor_list[0].__class__
-                cluster = sensor_class.clusterize(sensor_list)
-                omx_file.write(cluster)
+                    dispatcher.send(signals.VALIDATION_FAILED, exc, row=row)
 
-            omx_file.write(settings.OMX_FILE_END_STRING)
-            self.window['-ERROR_COUNTER-'].update(self.error_counter)
-            print('Обработка завершена.')
-
-        self.window[self.process_data_btn.key].update(disabled=False)
-        self.window[self.stop_process_btn.key].update(disabled=True)
-        self.window[self.save_data_btn.key].update(disabled=False)
+            if self.is_processing:
+                dispatcher.send(signals.STOP_PROCESSING, reason='Обработка успешно завершена.')
 
 
 if __name__ == '__main__':
