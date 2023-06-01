@@ -29,7 +29,7 @@ class Backend(BackendProtocol):
         except Exception as exc:
             signal = senders.DataLoadingFailed(message=str(exc), path=file_path)
         else:
-            signal = senders.DataLoaded(file_path)
+            signal = senders.DataLoaded(path=file_path)
         finally:
             signal.send()
 

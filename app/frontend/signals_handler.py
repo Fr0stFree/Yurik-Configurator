@@ -32,7 +32,7 @@ class SignalsHandler(Layout):
         self.save_data_btn.update(disabled=True)
         self.min_row_input.update(value=str(sender.min_row), disabled=True)
         self.max_row_input.update(value=str(sender.max_row), disabled=True)
-        self.progress_bar.update(0, sender.max_row-sender.min_row)
+        self.progress_bar.update(0, sender.max_row - sender.min_row)
 
         message = f"Начинаю обработку данных с {sender.min_row} по {sender.max_row} строку..."
         self.event_box.print(message, text_color="blue")

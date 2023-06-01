@@ -11,4 +11,3 @@ class InvalidFieldError(Exception):
 
 class InvalidSkipFlag(Exception):
     pass
-

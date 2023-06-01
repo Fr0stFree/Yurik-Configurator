@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
+from dataclasses import dataclass
 
 from pydispatch import dispatcher
 
@@ -16,81 +17,71 @@ class BaseSender(ABC):
         dispatcher.send(self.signal, sender=self)
 
 
+@dataclass
 class ProcessStarted(BaseSender):
     signal = Signals.PROCESS_STARTED
-
-    def __init__(self, min_row: int, max_row: int) -> None:
-        self.min_row = min_row
-        self.max_row = max_row
+    min_row: int
+    max_row: int
 
 
+@dataclass
 class ProcessStopped(BaseSender):
     signal = Signals.PROCESS_STOPPED
-
-    def __init__(self, message: str, on_success: bool) -> None:
-        self.message = message
-        self.on_success = on_success
+    message: str
+    on_success: bool
 
 
+@dataclass
 class DataLoaded(BaseSender):
     signal = Signals.DATA_LOADED
-
-    def __init__(self, path: Path):
-        self.path = path
+    path: Path
 
 
+@dataclass
 class DataLoadingFailed(BaseSender):
     signal = Signals.DATA_LOADING_FAILED
-
-    def __init__(self, message: str, path: Path):
-        self.message = message
-        self.path = path
+    message: str
+    path: Path
 
 
+@dataclass
 class DataSaved(BaseSender):
     signal = Signals.DATA_SAVED
-
-    def __init__(self, path: Path):
-        self.path = path
+    path: Path
 
 
+@dataclass
 class DataSavingFailed(BaseSender):
     signal = Signals.DATA_SAVING_FAILED
-
-    def __init__(self, message: str, path: Path):
-        self.message = message
-        self.path = path
+    message: str
+    path: Path
 
 
+@dataclass
 class SensorValidated(BaseSender):
     signal = Signals.SENSOR_VALIDATED
-
-    def __init__(self, name: str, row: int, column: str) -> None:
-        self.name = name
-        self.row = row
-        self.column = column
+    name: str
+    row: int
+    column: str
 
 
+@dataclass
 class SensorValidationFailed(BaseSender):
     signal = Signals.SENSOR_VALIDATION_FAILED
-
-    def __init__(self, message: str, error_counter: int, row: int, column: str) -> None:
-        self.message = message
-        self.error_counter = error_counter
-        self.row = row
-        self.column = column
+    message: str
+    error_counter: int
+    row: int
+    column: str
 
 
+@dataclass
 class SkipFlagDetected(BaseSender):
     signal = Signals.SKIP_FLAG_DETECTED
-
-    def __init__(self, row: int, column: str) -> None:
-        self.row = row
-        self.column = column
+    row: int
+    column: str
 
 
+@dataclass
 class UserInputValidationFailed(BaseSender):
     signal = Signals.USER_INPUT_VALIDATION_FAILED
-
-    def __init__(self, message: str) -> None:
-        self.message = message
+    message: str
