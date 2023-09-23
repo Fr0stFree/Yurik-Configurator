@@ -73,7 +73,7 @@ class Sensor:
 
 
 class SensorGroup:
-    def __init__(self, sensor_class: Type[Sensor]) -> None:
+    def __init__(self, sensor_class: Type[Sensor], start_index: int = 0):
         self._name = sensor_class.__name__
         self._pk = uuid.uuid5(uuid.NAMESPACE_DNS, self._name + str(datetime.now()))
         self._type = sensor_class
@@ -84,22 +84,26 @@ class SensorGroup:
             raise TypeError(f"Cannot handle sensor {sensor.__class__}. Group only for {self._type} sensors")
         self._sensors.append(sensor)
 
-    def to_block(self, type: ProcessTypes) -> str:
+    def to_block(self, type: ProcessTypes, start_index: int) -> str:
         options = {
             ProcessTypes.OMX: self.to_omx,
             ProcessTypes.HMI: self.to_hmi,
         }
-        return options[type]()
+        return options[type](start_index)
 
-    def to_omx(self) -> str:
+    def to_omx(self, start_index: int) -> str:
         start_string = constants.GROUP_OMX_START_STRING.format(self._type.CLASS_NAME, self._pk)
         end_string = constants.GROUP_OMX_END_STRING
         return start_string + "".join([sensor.to_omx() for sensor in self._sensors]) + end_string
 
-    def to_hmi(self) -> str:
+    def to_hmi(self, start_index: int) -> str:
         start_string = constants.GROUP_HMI_START_STRING
         end_string = constants.GROUP_HMI_END_STRING
-        return start_string + "".join([sensor.to_hmi() for sensor in self._sensors]) + end_string
+        return start_string + "".join([sensor.to_hmi(start_index) for sensor in self._sensors]) + end_string
+
+    @property
+    def sensor_count(self) -> int:
+        return len(self._sensors)
 
 
 class SensorCluster:
@@ -111,6 +115,7 @@ class SensorCluster:
         self._sensors.setdefault(key, SensorGroup(sensor.__class__)).add(sensor)
 
     def join(self, type: ProcessTypes) -> str:
+        sensor_index: int = 0
         options = {
             ProcessTypes.OMX: (
                 constants.CLUSTER_OMX_START_STRING,
@@ -121,4 +126,9 @@ class SensorCluster:
                 constants.CLUSTER_HMI_END_STRING,
             ),
         }
-        return options[type][0] + "".join([group.to_block(type) for group in self._sensors.values()]) + options[type][1]
+        result = options[type][0]
+        for group_index, group in enumerate(self._sensors.values()):
+            result += group.to_block(type, sensor_index)
+            sensor_index += group.sensor_count
+
+        return result + options[type][1]
