@@ -1,3 +1,5 @@
+from app.base import ProcessTypes
+
 GROUP_OMX_START_STRING = (
     '  <ct:object name="{0}" access-level="public" uuid="{1}">\n'
     '    <attribute type="unit.Server.Attributes.NodeRelativePath" />\n'
@@ -45,3 +47,12 @@ CLUSTER_HMI_START_STRING = (
     '    <designed target="WindowPosition" value="0" ver="4"/>\n'
     '    <designed target="WindowCloseMode" value="0" ver="4"/>\n'
 )
+
+START_STRING = {
+    ProcessTypes.OMX: CLUSTER_OMX_START_STRING,
+    ProcessTypes.HMI: CLUSTER_HMI_START_STRING,
+}
+END_STRING = {
+    ProcessTypes.OMX: CLUSTER_OMX_END_STRING,
+    ProcessTypes.HMI: CLUSTER_HMI_END_STRING,
+}

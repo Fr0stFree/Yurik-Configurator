@@ -37,7 +37,7 @@ class FB_SHPS_S(Sensor):
         )
         return omx_block
 
-    def to_hmi(self) -> str:
+    def to_hmi(self, index: int) -> str:
         hmi_block = (
             f'    <object access-modifier="private" name="{getattr(self, self.Name.key)}" display-name="{getattr(self, self.Name.key)}" uuid="{self.pk}" base-type="{self.BASE_TYPE}" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">\n'
             f'        <designed target="X" value="-138.75" ver="5"/>\n'

@@ -63,11 +63,11 @@ class Sensor:
             f"в файле app/backend/sensors/__init__.py"
         )
 
-    def to_omx(self):
+    def to_omx(self) -> str:
         """Метод для сериализации датчика в формат OMX. Реализован в каждом датчике отдельно"""
         raise NotImplementedError("Метод to_omx должен быть реализован для дочерних классов")
 
-    def to_hmi(self):
+    def to_hmi(self, index: int) -> str:
         """Метод для сериализации датчика в формат HMI. Реализован в каждом датчике отдельно"""
         raise NotImplementedError("Метод to_hmi должен быть реализован для дочерних классов")
 
@@ -84,22 +84,24 @@ class SensorGroup:
             raise TypeError(f"Cannot handle sensor {sensor.__class__}. Group only for {self._type} sensors")
         self._sensors.append(sensor)
 
-    def to_block(self, type: ProcessTypes, start_index: int) -> str:
+    def to_block(self, type: ProcessTypes, group_position: int) -> str:
         options = {
             ProcessTypes.OMX: self.to_omx,
             ProcessTypes.HMI: self.to_hmi,
         }
-        return options[type](start_index)
+        return options[type](group_position)
 
-    def to_omx(self, start_index: int) -> str:
+    def to_omx(self, group_position: int) -> str:
         start_string = constants.GROUP_OMX_START_STRING.format(self._type.CLASS_NAME, self._pk)
         end_string = constants.GROUP_OMX_END_STRING
         return start_string + "".join([sensor.to_omx() for sensor in self._sensors]) + end_string
 
-    def to_hmi(self, start_index: int) -> str:
-        start_string = constants.GROUP_HMI_START_STRING
-        end_string = constants.GROUP_HMI_END_STRING
-        return start_string + "".join([sensor.to_hmi(start_index) for sensor in self._sensors]) + end_string
+    def to_hmi(self, group_position: int) -> str:
+        result = constants.GROUP_HMI_START_STRING
+        for index, sensor in enumerate(self._sensors):
+            result += sensor.to_hmi(group_position + index)
+        result += constants.GROUP_HMI_END_STRING
+        return result
 
     @property
     def sensor_count(self) -> int:
@@ -107,28 +109,24 @@ class SensorGroup:
 
 
 class SensorCluster:
-    def __init__(self):
+    def __init__(self, sensor_interval_x: int = 25, sensor_interval_y: int = 50, sensor_panel_width: int = 500) -> None:
         self._sensors: dict[str, SensorGroup] = {}
+        self._delta_x = sensor_interval_x
+        self._delta_y = sensor_interval_y
+        self._width = sensor_panel_width
 
     def add(self, sensor: Sensor):
         key: str = sensor.__class__.__name__
         self._sensors.setdefault(key, SensorGroup(sensor.__class__)).add(sensor)
 
     def join(self, type: ProcessTypes) -> str:
+        start_string = constants.START_STRING[type]
+        end_string = constants.END_STRING[type]
+
+        result = start_string
         sensor_index: int = 0
-        options = {
-            ProcessTypes.OMX: (
-                constants.CLUSTER_OMX_START_STRING,
-                constants.CLUSTER_OMX_END_STRING,
-            ),
-            ProcessTypes.HMI: (
-                constants.CLUSTER_HMI_START_STRING,
-                constants.CLUSTER_HMI_END_STRING,
-            ),
-        }
-        result = options[type][0]
         for group_index, group in enumerate(self._sensors.values()):
-            result += group.to_block(type, sensor_index)
+            result += group.to_block(type, ...)
             sensor_index += group.sensor_count
 
-        return result + options[type][1]
+        return result + end_string
