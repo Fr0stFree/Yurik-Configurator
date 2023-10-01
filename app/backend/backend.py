@@ -17,7 +17,7 @@ from . import settings
 class Backend(BackendProtocol):
     def __init__(self) -> None:
         self._error_counter: int = 0
-        self._cluster = SensorCluster()
+        self._cluster = SensorCluster(settings.SENSOR_INTERVAL_X, settings.SENSOR_INTERVAL_Y, settings.SENSOR_MAX_X)
         self._process_type: ProcessTypes = ProcessTypes.default()
         self._is_running: bool = False
         self._data: Optional[Worksheet] = None
