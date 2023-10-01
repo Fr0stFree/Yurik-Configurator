@@ -1,0 +1,1763 @@
+<type access-modifier="private" name="ParcerHMI" display-name="ParcerHMI" uuid="9a110b5c-0c05-4f31-b7ec-58eb4abcc96e" base-type="Form" base-type-id="ffaf5544-6200-45f4-87ec-9dd24558a9d5" ver="4">
+    <designed target="X" value="0" ver="4"/>
+    <designed target="Y" value="0" ver="4"/>
+    <designed target="ZValue" value="0" ver="4"/>
+    <designed target="Rotation" value="0" ver="4"/>
+    <designed target="Scale" value="1" ver="4"/>
+    <designed target="Visible" value="true" ver="4"/>
+    <designed target="Opacity" value="1" ver="4"/>
+    <designed target="Enabled" value="true" ver="4"/>
+    <designed target="Tooltip" value="" ver="4"/>
+    <designed target="Width" value="3000" ver="4"/>
+    <designed target="Height" value="3000" ver="4"/>
+    <designed target="PenColor" value="0xff000000" ver="4"/>
+    <designed target="PenStyle" value="0" ver="4"/>
+    <designed target="PenWidth" value="1" ver="4"/>
+    <designed target="BrushColor" value="0xffc0c0c0" ver="4"/>
+    <designed target="BrushStyle" value="1" ver="4"/>
+    <designed target="WindowX" value="0" ver="4"/>
+    <designed target="WindowY" value="0" ver="4"/>
+    <designed target="WindowWidth" value="1920" ver="4"/>
+    <designed target="WindowHeight" value="1080" ver="4"/>
+    <designed target="WindowCaption" value="" ver="4"/>
+    <designed target="ShowWindowCaption" value="true" ver="4"/>
+    <designed target="ShowWindowMinimize" value="true" ver="4"/>
+    <designed target="ShowWindowMaximize" value="true" ver="4"/>
+    <designed target="ShowWindowClose" value="true" ver="4"/>
+    <designed target="AlwaysOnTop" value="false" ver="4"/>
+    <designed target="WindowSizeMode" value="0" ver="4"/>
+    <designed target="WindowBorderStyle" value="1" ver="4"/>
+    <designed target="WindowState" value="0" ver="4"/>
+    <designed target="WindowScalingMode" value="0" ver="4"/>
+    <designed target="MonitorNumber" value="0" ver="4"/>
+    <designed target="WindowPosition" value="0" ver="4"/>
+    <designed target="WindowCloseMode" value="0" ver="4"/>
+    <object access-modifier="private" name="GP301_BTH_01" display-name="GP301_BTH_01" uuid="28f6b47b-11ef-58f3-98a9-798eed1118c6" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="0" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="28f6b47b-11ef-58f3-98a9-798eed1118c6" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_02" display-name="GP301_BTH_02" uuid="97cf8db8-4e1c-5917-9aa1-54c0d766ca69" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="0" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="97cf8db8-4e1c-5917-9aa1-54c0d766ca69" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_03" display-name="GP301_BTH_03" uuid="10f77191-a2a0-5b0c-8494-2f1b9b662cce" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="0" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="10f77191-a2a0-5b0c-8494-2f1b9b662cce" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_04" display-name="GP301_BTK_04" uuid="36ed735b-a5b1-53ad-b2c0-305e8350706a" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="0" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="36ed735b-a5b1-53ad-b2c0-305e8350706a" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_05" display-name="GP301_BTH_05" uuid="5dd977fe-f1ef-5b56-b8f9-f9e0b6e755d3" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="50" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="5dd977fe-f1ef-5b56-b8f9-f9e0b6e755d3" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_06" display-name="GP301_BTH_06" uuid="d06030e0-1cef-5f89-9b8d-8c9466d5a936" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="50" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="d06030e0-1cef-5f89-9b8d-8c9466d5a936" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_07" display-name="GP301_BTH_07" uuid="b25296b7-c71d-57ec-968f-350ebf2caca0" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="50" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="b25296b7-c71d-57ec-968f-350ebf2caca0" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_08" display-name="GP301_BTH_08" uuid="cd12ded7-7306-54f7-9b3d-3d0f061f1640" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="50" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="cd12ded7-7306-54f7-9b3d-3d0f061f1640" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_08_01" display-name="GP301_BTH_08_01" uuid="c824996d-fc73-5a69-bbfa-e2722e191626" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="50" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="c824996d-fc73-5a69-bbfa-e2722e191626" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_09" display-name="GP301_BTH_09" uuid="e4b9a950-4a6c-5135-9566-f3753c4810af" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="100" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="e4b9a950-4a6c-5135-9566-f3753c4810af" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_10" display-name="GP301_BTK_10" uuid="d68a75bc-0d4e-550a-b7f3-8337ac4852e2" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="100" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="d68a75bc-0d4e-550a-b7f3-8337ac4852e2" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_11" display-name="GP301_BTH_11" uuid="7e4e7b3d-1711-51ce-923e-6f76906f50c5" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="100" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="7e4e7b3d-1711-51ce-923e-6f76906f50c5" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_12" display-name="GP301_BTH_12" uuid="091eedd2-639f-5c10-b040-0d87507c0bcb" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="100" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="091eedd2-639f-5c10-b040-0d87507c0bcb" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_13" display-name="GP301_BTK_13" uuid="1d27c6e2-843b-5963-9bb5-c5855f3b134a" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="100" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="1d27c6e2-843b-5963-9bb5-c5855f3b134a" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_14" display-name="GP301_BTK_14" uuid="400ca96a-8542-59a7-a73e-41a529da831f" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="150" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="400ca96a-8542-59a7-a73e-41a529da831f" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_15" display-name="GP301_BTH_15" uuid="30582c6d-2a30-5e96-86b4-9f8d461c1f3a" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="150" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="30582c6d-2a30-5e96-86b4-9f8d461c1f3a" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_15_01" display-name="GP301_BTH_15_01" uuid="70472ad7-ceb5-5271-9897-a9d83e3ce595" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="150" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="70472ad7-ceb5-5271-9897-a9d83e3ce595" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_16" display-name="GP301_BTH_16" uuid="85d1da6b-b76d-5e8e-ad18-8de86260c921" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="150" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="85d1da6b-b76d-5e8e-ad18-8de86260c921" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_17" display-name="GP301_BTH_17" uuid="1005f972-3205-5942-a30d-e7e69cc33b34" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="150" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="1005f972-3205-5942-a30d-e7e69cc33b34" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_17_01" display-name="GP301_BTH_17_01" uuid="2d74145a-5032-5624-a90a-07b3d0528fd3" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="200" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="2d74145a-5032-5624-a90a-07b3d0528fd3" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_18" display-name="GP301_BTH_18" uuid="9ac02c57-d0a6-5439-8bee-f59ab276e803" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="200" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="9ac02c57-d0a6-5439-8bee-f59ab276e803" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_18_01" display-name="GP301_BTH_18_01" uuid="78b9df37-be55-5e8c-8911-7bf7cae04c48" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="200" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="78b9df37-be55-5e8c-8911-7bf7cae04c48" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_19" display-name="GP301_BTH_19" uuid="fb5a32c4-432c-53e9-b612-34fc12bd750f" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="200" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="fb5a32c4-432c-53e9-b612-34fc12bd750f" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_20" display-name="GP301_BTH_20" uuid="eb3f50be-5272-57e3-bd25-9f1e0f1241c4" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="200" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="eb3f50be-5272-57e3-bd25-9f1e0f1241c4" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_01" display-name="GP301_BTH_01" uuid="c9d7a148-fa48-5803-843d-8b130bc66014" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="250" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="c9d7a148-fa48-5803-843d-8b130bc66014" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_02" display-name="GP301_BTH_02" uuid="e8e50931-9388-52c0-b5eb-14c55ad4f44b" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="250" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="e8e50931-9388-52c0-b5eb-14c55ad4f44b" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_03" display-name="GP301_BTH_03" uuid="86f36d1a-80fa-500a-bafe-145553deb9ab" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="250" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="86f36d1a-80fa-500a-bafe-145553deb9ab" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_04" display-name="GP301_BTK_04" uuid="e227f0b1-633b-54a6-a9d3-706bc9be7fa8" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="250" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="e227f0b1-633b-54a6-a9d3-706bc9be7fa8" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_05" display-name="GP301_BTH_05" uuid="5335b90f-35ca-5556-90c0-af21ab5ac1d9" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="250" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="5335b90f-35ca-5556-90c0-af21ab5ac1d9" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_06" display-name="GP301_BTH_06" uuid="39205866-478d-51db-b881-7e5b0e667656" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="300" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="39205866-478d-51db-b881-7e5b0e667656" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_07" display-name="GP301_BTH_07" uuid="de2beb5d-9d4a-5eeb-beb1-ac5ec69e9381" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="300" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="de2beb5d-9d4a-5eeb-beb1-ac5ec69e9381" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_08" display-name="GP301_BTH_08" uuid="443de397-20b9-5e10-bd18-c242e960feb5" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="300" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="443de397-20b9-5e10-bd18-c242e960feb5" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_08_01" display-name="GP301_BTH_08_01" uuid="cf4dbddd-840b-5c2b-be7f-f5432346f64c" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="300" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="cf4dbddd-840b-5c2b-be7f-f5432346f64c" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_09" display-name="GP301_BTH_09" uuid="e0ce0f1f-c23a-585e-a96b-e2384a710553" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="300" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="e0ce0f1f-c23a-585e-a96b-e2384a710553" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_10" display-name="GP301_BTK_10" uuid="4d360bd8-8e0d-5472-8c86-e004bc3d917f" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="350" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="4d360bd8-8e0d-5472-8c86-e004bc3d917f" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_11" display-name="GP301_BTH_11" uuid="816ce60c-6f1f-5bc9-a0b2-59f33c06d2b4" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="350" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="816ce60c-6f1f-5bc9-a0b2-59f33c06d2b4" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_12" display-name="GP301_BTH_12" uuid="300160dd-1f75-5493-9225-6d83942d6072" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="350" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="300160dd-1f75-5493-9225-6d83942d6072" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_13" display-name="GP301_BTK_13" uuid="72672a5f-563a-5125-a752-be05aff78893" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="350" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="72672a5f-563a-5125-a752-be05aff78893" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_14" display-name="GP301_BTK_14" uuid="21944149-66ef-5426-91cc-cd15da6d8efc" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="350" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="21944149-66ef-5426-91cc-cd15da6d8efc" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_15" display-name="GP301_BTH_15" uuid="a915016e-eb7c-5d94-87ac-558feeafdc40" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="400" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="a915016e-eb7c-5d94-87ac-558feeafdc40" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_15_01" display-name="GP301_BTH_15_01" uuid="cc2fbad0-deb0-566b-8c25-540c5be01c39" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="400" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="cc2fbad0-deb0-566b-8c25-540c5be01c39" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_16" display-name="GP301_BTH_16" uuid="2d54ccd3-7d54-57a3-9cf1-ca72c4d04558" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="400" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="2d54ccd3-7d54-57a3-9cf1-ca72c4d04558" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_17" display-name="GP301_BTH_17" uuid="120e73cc-0874-5bad-8f9a-5025a9e43957" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="400" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="120e73cc-0874-5bad-8f9a-5025a9e43957" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_17_01" display-name="GP301_BTH_17_01" uuid="4b86b28a-0125-56fd-be25-bc31426d37e7" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="400" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="4b86b28a-0125-56fd-be25-bc31426d37e7" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_18" display-name="GP301_BTH_18" uuid="a0e4bfb8-341e-59cf-b456-9a742f85d249" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="450" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="a0e4bfb8-341e-59cf-b456-9a742f85d249" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_18_01" display-name="GP301_BTH_18_01" uuid="dc41e18f-f44d-59f0-a898-4d981e6c6176" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="450" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="dc41e18f-f44d-59f0-a898-4d981e6c6176" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_19" display-name="GP301_BTH_19" uuid="8cad9029-a83a-5f63-89a2-a7a98001d29d" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="450" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="8cad9029-a83a-5f63-89a2-a7a98001d29d" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_20" display-name="GP301_BTH_20" uuid="3f431ed1-0165-5186-9fef-971817b96276" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="450" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="3f431ed1-0165-5186-9fef-971817b96276" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_01" display-name="GP301_BTH_01" uuid="bb1959b9-f4aa-5a31-b39a-ed9bf73f1842" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="450" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="bb1959b9-f4aa-5a31-b39a-ed9bf73f1842" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_02" display-name="GP301_BTH_02" uuid="c53566ad-6b86-5d6f-9886-5128683f1a80" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="500" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="c53566ad-6b86-5d6f-9886-5128683f1a80" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_03" display-name="GP301_BTH_03" uuid="45e1c053-ecd0-5186-87c1-1ec7d201c174" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="500" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="45e1c053-ecd0-5186-87c1-1ec7d201c174" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_04" display-name="GP301_BTK_04" uuid="a5c3c35c-73cd-5fd7-85df-9003b1fb3a3b" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="500" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="a5c3c35c-73cd-5fd7-85df-9003b1fb3a3b" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_05" display-name="GP301_BTH_05" uuid="4b054488-9b03-5ac3-b21b-c666131704ae" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="500" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="4b054488-9b03-5ac3-b21b-c666131704ae" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_06" display-name="GP301_BTH_06" uuid="10c218ea-6f3f-5f05-8414-35d14b0eaa19" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="500" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="10c218ea-6f3f-5f05-8414-35d14b0eaa19" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_07" display-name="GP301_BTH_07" uuid="df8e46bc-db87-5fd8-8a13-cf844c6b79de" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="550" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="df8e46bc-db87-5fd8-8a13-cf844c6b79de" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_08" display-name="GP301_BTH_08" uuid="a0dc1402-2971-5763-b15e-2f4d0ed5702e" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="550" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="a0dc1402-2971-5763-b15e-2f4d0ed5702e" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_08_01" display-name="GP301_BTH_08_01" uuid="e8633c58-163e-5e67-a46a-4159f81c2a7d" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="550" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="e8633c58-163e-5e67-a46a-4159f81c2a7d" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_09" display-name="GP301_BTH_09" uuid="6bf57412-0823-555c-978c-2a14ac3fa1fe" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="550" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="6bf57412-0823-555c-978c-2a14ac3fa1fe" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_10" display-name="GP301_BTK_10" uuid="3438af3c-14d2-5547-96e1-528bd0094fe4" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="550" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="3438af3c-14d2-5547-96e1-528bd0094fe4" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_11" display-name="GP301_BTH_11" uuid="50a6ee86-b7b8-59e1-a2b2-a0ce4cc3161f" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="600" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="50a6ee86-b7b8-59e1-a2b2-a0ce4cc3161f" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_12" display-name="GP301_BTH_12" uuid="fdf8857f-f4fa-523c-a582-b76b45d6cce1" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="600" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="fdf8857f-f4fa-523c-a582-b76b45d6cce1" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_13" display-name="GP301_BTK_13" uuid="7ec98671-324a-56ee-92cd-f761d431c486" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="600" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="7ec98671-324a-56ee-92cd-f761d431c486" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTK_14" display-name="GP301_BTK_14" uuid="c778afb7-f4ab-56f2-be9d-67f94caffeec" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="600" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="c778afb7-f4ab-56f2-be9d-67f94caffeec" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_15" display-name="GP301_BTH_15" uuid="32b4bb93-3acf-579e-a929-fe866e0cd0b8" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="600" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="32b4bb93-3acf-579e-a929-fe866e0cd0b8" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_15_01" display-name="GP301_BTH_15_01" uuid="88f928ca-6cda-5242-b624-9f7ad951eaae" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="650" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="88f928ca-6cda-5242-b624-9f7ad951eaae" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_16" display-name="GP301_BTH_16" uuid="5c0d8caa-e316-5e4c-a312-8e1bb8ea91e6" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="650" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="5c0d8caa-e316-5e4c-a312-8e1bb8ea91e6" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_17" display-name="GP301_BTH_17" uuid="6761f1e3-8cef-5e4c-a2d6-0b74206910f2" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="650" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="6761f1e3-8cef-5e4c-a2d6-0b74206910f2" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_17_01" display-name="GP301_BTH_17_01" uuid="b0865490-14f9-504d-86fc-2a7c2b768c71" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="75" ver="5"/>
+        <designed target="Y" value="650" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="b0865490-14f9-504d-86fc-2a7c2b768c71" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_18" display-name="GP301_BTH_18" uuid="ff954035-0e4e-53d2-a60f-03f54adc8921" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="100" ver="5"/>
+        <designed target="Y" value="650" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="ff954035-0e4e-53d2-a60f-03f54adc8921" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_18_01" display-name="GP301_BTH_18_01" uuid="64617093-7bed-57b2-8086-39f19d936d20" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="0" ver="5"/>
+        <designed target="Y" value="700" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="64617093-7bed-57b2-8086-39f19d936d20" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_19" display-name="GP301_BTH_19" uuid="71997009-ce08-591d-8561-a5a8d2894063" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="25" ver="5"/>
+        <designed target="Y" value="700" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="71997009-ce08-591d-8561-a5a8d2894063" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+    <object access-modifier="private" name="GP301_BTH_20" display-name="GP301_BTH_20" uuid="ada697e6-c0c2-5ba2-b7b5-5def17dfea87" base-type="Types.FB_SHPS_S.FB_SHPS_S_PLC" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">
+        <designed target="X" value="50" ver="5"/>
+        <designed target="Y" value="700" ver="5"/>
+        <designed target="Rotation" value="0" ver="5"/>
+        <init target="_init_APSource" ver="5" ref="unit.Global.ApMain"/>
+        <init target="_init_Object" ver="5" value="KSPA001_SHU.GP001_BTH_01"/>
+    </object>
+    <object access-modifier="private" name="Text_393" display-name="Text_393" uuid="ada697e6-c0c2-5ba2-b7b5-5def17dfea87" base-type="Text" base-type-id="21d59f8d-2ca4-4592-92ca-b4dc48992a0f" ver="4">
+        <designed target="X" value="9.16665" ver="4"/>
+        <designed target="Y" value="43" ver="4"/>
+        <designed target="ZValue" value="0" ver="4"/>
+        <designed target="Rotation" value="0" ver="4"/>
+        <designed target="Scale" value="1" ver="4"/>
+        <designed target="Visible" value="true" ver="4"/>
+        <designed target="Opacity" value="1" ver="4"/>
+        <designed target="Enabled" value="true" ver="4"/>
+        <designed target="Tooltip" value="" ver="4"/>
+        <designed target="Width" value="45.6667" ver="4"/>
+        <designed target="Height" value="13.7143" ver="4"/>
+        <designed target="Text" value="3BTH2" ver="4"/>
+        <designed target="Font" value="Liberation Sans,10,-1,5,75,0,0,0,0,0,Bold" ver="4"/>
+        <designed target="FontColor" value="0xff000000" ver="4"/>
+        <designed target="TextAlignment" value="132" ver="4"/>
+    </object>
+</type>
