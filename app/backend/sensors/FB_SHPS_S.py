@@ -39,7 +39,7 @@ class FB_SHPS_S(Sensor):
 
     def to_hmi(self, x: int, y: int) -> str:
         hmi_block = (
-            f'    <object access-modifier="private" name="{getattr(self, self.Name.key)}" display-name="{getattr(self, self.Name.key)}" uuid="{self.pk}" base-type="{self.BASE_TYPE}" base-type-id="486dd59f-52d3-4c14-a25d-e54fb8eb80f6" ver="5">\n'
+            f'    <object access-modifier="private" name="{getattr(self, self.Name.key)}" display-name="{getattr(self, self.Name.key)}" uuid="{self.pk}" base-type="{self.BASE_TYPE}" base-type-id="be1a17f2-fe40-494e-be5f-94d0b3c10a6d" ver="5">\n'
             f'        <designed target="X" value="{x}" ver="5"/>\n'
             f'        <designed target="Y" value="{y}" ver="5"/>\n'
             f'        <designed target="Rotation" value="0" ver="5"/>\n'
